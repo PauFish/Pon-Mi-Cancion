@@ -24,7 +24,6 @@ use App\Http\Controllers\SongController;
 //});
 
 Route::resource('roles',RoleController::class);
-
 Route::resource('users',UserController::class);
 Route::resource('parties',PartyController::class);
 Route::resource('songs',SongController::class);
