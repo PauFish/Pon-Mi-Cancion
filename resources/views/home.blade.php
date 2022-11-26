@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -20,4 +21,19 @@
         </div>
     </div>
 </div>
+<br>
+<div class="fiestas_container">
+    <h1>Las Mejores Fiestas Las Haces Tú!!!</h1>
+    </div>
+ 
+    <div class="">
+    <h2>Vota tu cancion preferia ya!</h2>
+            
+        </div>
+    </div>
+</div>
+
+
 @endsection
+
+
