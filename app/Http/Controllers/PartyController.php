@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PartyRequest;
 use App\Providers\PartyServiceProvider;
+use App\Models\Party;
 use Illuminate\Http\Response;
+use Illuminate\Http\Request;
+
 
 class PartyController extends Controller
 {
@@ -14,7 +17,15 @@ class PartyController extends Controller
     }
 
     public function index(){
-        return response()->json([ 'data'=> $this->partyService->index()]);
+        $parties = collect(data_get(app()->make(Party::class)->list(),'data'));
+        
+        return view('home', compact('parties'));
+        //guardamos todos los datos de los usuarios en la variable $users
+        //$parties = Party::all();
+
+        //return view('home',compact('parties'));
+
+        //return response()->json([ 'data'=> $this->partyService->index()]);
     }
 
     public function show($id){

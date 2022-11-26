@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
-namespace App\Http\Controllers;
 use App\Http\Requests\UserRequest;
 use App\Providers\UserServiceProvider;
+use App\Models\User;
 use Illuminate\Http\Response;
+
 
 class UserController extends Controller
 {
@@ -15,6 +15,11 @@ class UserController extends Controller
     }
 
     public function index(){
+
+        //guardamos todos los datos de los usuarios en la variable $users
+        //$users = User::all();
+        //return view('home',compact('users'));
+        
         return response()->json([ 'data'=> $this->userService->index()]);
     }
 
