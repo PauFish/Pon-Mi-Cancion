@@ -21,3 +21,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/songs', [App\Http\Controllers\SongController::class, 'index'])->name('songs');
+
+Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name('user');
+
+Route::get('/role', [App\Http\Controllers\RoleController::class, 'index'])->name('role');

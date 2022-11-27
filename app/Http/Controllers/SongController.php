@@ -5,6 +5,7 @@ use App\Http\Requests\SongRequest;
 use App\Providers\SongServiceProvider;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
+use App\Models\Song;
 
 
 class SongController extends Controller
@@ -15,7 +16,11 @@ class SongController extends Controller
     }
 
     public function index(){
-        return response()->json([ 'data'=> $this->songService->index()]);
+        $songs = collect(data_get(app()->make(Song::class)->list(),'data'));
+        
+        return view('song', compact('songs'));
+       // return response()->json([ 'data'=> $this->songService->index()]);
+
     }
 
     public function show($id){
