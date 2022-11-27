@@ -16,8 +16,10 @@ class SongController extends Controller
     }
 
     public function index(){
-        $songs = collect(data_get(app()->make(Song::class)->list(),'data'));
+        //$songs = collect(data_get(app()->make(Song::class)->list(),'data'));
+        $songs = Song::all();
         
+       
         return view('song', compact('songs'));
        // return response()->json([ 'data'=> $this->songService->index()]);
 

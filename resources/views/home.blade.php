@@ -45,7 +45,7 @@
         <tr>
             <td>{{$party->name}}</td>
             <td>{{$party->photo}}</td>
-            <td><a href="/song"><button class="btn btn-primary" type="button" >Ver Canciones</button></a></td>
+            <td><a href="/song"><button class="btn btn-primary" type="button" >Ver Canciones</button></a></td>-->
         </tr>  
         @endforeach    
         <tbody>
@@ -53,8 +53,14 @@
 </div>
 
 @endsection
+
+<a href="" class=
+
+
+
 </div>
 </div>
+
                 </div>
             </div>
         </div>
