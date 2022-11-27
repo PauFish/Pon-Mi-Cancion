@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-15">
@@ -16,13 +15,9 @@
                         </div>
                     @endif
 
-                    
-
     <div class="card">
         <div class="card-body">
-
-   
-                  
+              
 @php
     $parties=\App\Models\Party::all();
 @endphp

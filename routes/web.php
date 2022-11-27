@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PartyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +29,7 @@ Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name
 
 Route::get('/role', [App\Http\Controllers\RoleController::class, 'index'])->name('role');
 
-/*Route::resource("user, UserController::class); */
+
+
+//Route::get('/home', [App\Http\Controllers\PartyController::class, 'index'])->name('party');
+

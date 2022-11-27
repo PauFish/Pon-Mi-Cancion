@@ -32,14 +32,19 @@ class PartyController extends Controller
         return response()->json(['data'=> $this->partyService->show($id)]);
     }
 
-    public function store(PartyRequest $request){
-        $data = $request->validated();
+    public function store(PartyRequest $request) 
+        {
+       $data = $request->validated();
         $name = $data['name'];
         $photo = ['photo'];
         $result = $this->partyService->store([$name,$photo]);
         return 'Party creada con exito';
+        
        
     }
+
+
+
 
     public function destroy($id) {
         $this->partyService->delete($id);
