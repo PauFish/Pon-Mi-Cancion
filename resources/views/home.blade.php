@@ -9,6 +9,9 @@
             <div class="card">
                 <div class="card-header"><h1>Las Mejores Fiestas Las Haces Tú!!!</h1></div>
 
+                <a href="{{ url('/home/create') }}" class="btn btn-success btn-sm" title="Añadir fiesta">Añadir Fiesta</a>
+<div class="parties_container">
+
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -20,18 +23,17 @@
 
     <div class="card">
         <div class="card-body">
-
-   
-                  
+  
 @php
     $parties=\App\Models\Party::all();
 @endphp
 
-<div class="parties_container">
     
-    <h2 class="text-white bg-primary">Selecciona Tu Fiesta Ya!!</h2>
+    <h2 class="text-white bg-primary">Selecciona Tu Fiesta YA!!</h2>
     
 <table id="parties_Table" class="table table-striped">
+    
+
     <thead> 
         <tr>
             <th>Fiesta</th>
@@ -45,7 +47,8 @@
         <tr>
             <td>{{$party->name}}</td>
             <td>{{$party->photo}}</td>
-            <td><a href="/song"><button class="btn btn-primary" type="button" >Ver Canciones</button></a></td>-->
+            <td><a href="/song"><button class="btn btn-primary" type="button" >Ver Canciones</button></a></td>
+            
         </tr>  
         @endforeach    
         <tbody>
@@ -54,11 +57,7 @@
 
 @endsection
 
-<a href="" class=
 
-
-
-</div>
 </div>
 
                 </div>
