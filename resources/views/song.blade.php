@@ -6,7 +6,10 @@
     <div class="row justify-content-center">
         <div class="col-md-15">
             <div class="card">
-                <div class="card-header"><h1>Las Mejores Fiestas Las Haces Tú!!!</h1></div>
+                <div class="card-header"><h1>Las Mejores Canciones!!!</h1></div>
+                 <!-- Create -->
+                <a href="{{ url('/songs/create') }}" class="btn btn-success btn-sm" title="Añadir Cancion">Añadir Nueva Canción</a>
+                
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -19,13 +22,12 @@
     $songs=\App\Models\Song::all();
 @endphp
 
- <!-- Create -->
- <a href="{{ url('/songs/create') }}" class="btn btn-success btn-sm" title="Añadir Cancion">Añadir Canción</a>
+
    
 
 <div class="songs_container">
     
-    <h2 class="text-white bg-primary">Vota tu cancóon preferida YA!</h2>
+    <h2 class="text-white bg-primary">Vota tu canción preferida YA!</h2>
     
 <table id="songs_Table" class="table table-striped">
     <thead> 
@@ -46,14 +48,14 @@
             <td>{{$song->title}}</td>
             <td>{{$song->artist}}</td>
             <td>{{$song->vote}}</td>
-            <!-- editar fiestas-->
-            <td><a href="/songs/{{$song->id}}/edit" class="btn btn-info">Editar Fiesta</a></td>       
-            <!-- eliminar fiestas-->
+            <!-- editar Canciones-->
+            <td><a href="/songs/{{$song->id}}/edit" class="btn btn-info">Editar Canción</a></td>       
+            <!-- eliminar Canciones-->
             <td>
                 <form action="{{route('songs.destroy',$song->id)}}" method='POST'>
                     @csrf
                     @method('DELETE')
-                    <button class="btn btn-danger" type="submit">Eliminar Fiesta</button>
+                    <button class="btn btn-danger" type="submit">Eliminar  Canción</button>
                 </form>
             </td>
 

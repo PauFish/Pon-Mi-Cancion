@@ -24,30 +24,53 @@ class SongController extends Controller
        // return response()->json([ 'data'=> $this->songService->index()]);
 
     }
-
+/*
     public function show($id){
         return response()->json(['data'=> $this->songService->show($id)]);
     }
+*/
 
-    public function store(SongRequest $request){
-        $data = $request->validated();
-        $title = $data['title'];
-        $artist = $data['artist'];
-        $result = $this->songService->store([$title, $artist]);
-        return 'Cancion creada con exito';
+    public function create()
+    {
+        return view('songs.create');
+    }
+    public function store(Request $request){
+        $data= new Song();
+
+        $data->title = $request->get('title');
+        $data->artist = $request->get('artist');
+        $data->vote = $request->get('vote');
+
+        $data->save();
+        
+         return redirect('/song');
        
     }
 
     public function destroy($id) {
-        $this->songService->delete($id);
+       /* $this->songService->delete($id);
         return 'Cancion eliminada con exito';
+        */
+        $data = Song::find($id);
+        $data->delete();
+        return redirect('/song');
     }
 
-    public function update(SongRequest $request, $id){
-        $data = $request->validated();
-        $title = $data['title'];
-        $artist = $data['artist'];
-        $this->songService->update($id,[$title, $artist]);
-        return "Cancion actualizada con exito";
+    public function edit($id) {
+        $song = Song::find($id);
+        return view('songs.edit')->with('song',$song);
+    }
+
+    public function update(Request $request, $id){
+        
+        $data = Song::find($id);
+
+        $data->title = $request->get('title');
+        $data->artist = $request->get('artist');
+        $data->vote = $request->get('vote');
+
+        $data->save();
+        /*return "Cancion actualizada con exito";*/
+        return redirect('/song');
     }
 }

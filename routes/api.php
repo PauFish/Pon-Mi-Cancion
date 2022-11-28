@@ -2,10 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RoleController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\PartyController;
-use App\Http\Controllers\SongController;
+
 
 
 /*
@@ -26,4 +23,3 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::resource('roles',RoleController::class);
 Route::resource('users',UserController::class);
 
-Route::resource('songs',SongController::class);
