@@ -10,7 +10,7 @@
                 <div class="card-header"><h1>Las Mejores Fiestas Las Haces Tú!!!</h1></div>
 
                 <!-- Create -->
-                 
+                <a href="{{ url('/parties/create') }}" class="btn btn-success btn-sm" title="Añadir fiesta">Añadir Fiesta</a>
     <div class="parties_container">
 
                 <div class="card-body">
