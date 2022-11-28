@@ -38,8 +38,10 @@
             <th>ID</th>
             <th>Fiesta</th>
             <th>Cartel</th>
-            <th>.</th>
-            <th>.</th>
+            <th>Ver</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+            
         </tr>
     </thead>  
 <!--le pasamos la variable en la que se almaceno todas las parties en PartyController
@@ -51,10 +53,19 @@
             <td>{{$party->name}}</td>
             <td>{{$party->photo}}</td>
             <!-- para moverse a canciones-->
-            <td><a href="/song"><button class="btn btn-primary" type="button" >Canciones</button></a></td>
+            <td><a href="/song"><button class="btn btn-primary" type="button" >Ver Canciones</button></a></td>
             <!-- editar fiestas-->
-            <td><a href="/parties/{{$party->id}}/edit" class="btn btn-info">Editar</a></td>        
-            <!-- eliminar fiestas-->  
+            <td><a href="/parties/{{$party->id}}/edit" class="btn btn-info">Editar Fiesta</a></td>       
+            <!-- eliminar fiestas-->
+           
+            <td>
+            <form action="{{route('parties.destroy',$party->id)}}" method='POST'>
+                @csrf
+                @method('DELETE')
+                <button class="btn btn-danger" type="submit">Eliminar Fiesta</button>
+            </form>
+            </td>
+
 
             
         </tr>  

@@ -62,8 +62,11 @@ class PartyController extends Controller
     }
 
     public function destroy($id) {
-        $this->partyService->delete($id);
-        return 'Party eliminada con exito';
+       /* $this->partyService->delete($id);
+        return 'Party eliminada con exito';*/
+        $data = Party::find($id);
+        $data->delete();
+        return redirect('/home');
     }
 
     public function edit($id) {
