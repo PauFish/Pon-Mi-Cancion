@@ -33,13 +33,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Procesa de los CRUD las rutas (get,post,put,delete) en solo una linea de codigo
 Route::resource('parties', PartyController::class);
 
-Route::resource('songs',SongController::class);
-
-
-
-
-
-
-
-
-
+Route::resource('songs', SongController::class);

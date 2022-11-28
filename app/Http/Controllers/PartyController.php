@@ -58,9 +58,7 @@ class PartyController extends Controller
         $data->delete();
         echo '<script>alert("Fiesta eliminada"), window.location.href ="/home" </script>';
         //return redirect('/home');
-        
-      
-          
+         
     }
 
     public function edit($id) {
