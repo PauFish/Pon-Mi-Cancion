@@ -32,30 +32,58 @@ class PartyController extends Controller
         return response()->json(['data'=> $this->partyService->show($id)]);
     }
 
+    public function create()
+    {
+        return view('parties.create');
+    }
+
+    /*
     public function store(PartyRequest $request) 
         {
        $data = $request->validated();
         $name = $data['name'];
-        $photo = ['photo'];
+        $photo = $data['photo'];
         $result = $this->partyService->store([$name,$photo]);
-        return 'Party creada con exito';
-        
+        return redirect('/home'); 
        
     }
+    */
 
+    public function store(Request $request)
+    {
+        $data= new Party();
 
+        $data->name = $request->get('name');
+        $data->photo = $request->get('photo');
 
+        $data->save();
+        
+         return redirect('/home');
+    }
 
     public function destroy($id) {
         $this->partyService->delete($id);
         return 'Party eliminada con exito';
     }
 
-    public function update(PartyRequest $request, $id){
-        $data = $request->validated();
+    public function edit($id) {
+        $party = Party::find($id);
+        return view('parties.edit')->with('party',$party);
+    }
+    public function update(Request $request, $id){
+       /* $data = $request->validated();
         $name = ['name'];
         $photo = ['photo'];
         $this->partyService->update($id, [$name, $photo]);
-        return "Party actualizada con exito";
+        return "Party actualizada con exito";*/
+
+        $data = Party::find($id);
+
+        $data->name = $request->get('name');
+        $data->photo = $request->get('photo');
+
+        $data->save();
+        
+         return redirect('/home');
     }
-}
+}  

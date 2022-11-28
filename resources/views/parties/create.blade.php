@@ -5,8 +5,8 @@
   <div class="card-header"><h2>Crear Nueva Fiesta</h2></div>
   <div class="card-body">
        <!-- Home es nuestra parties -->
-      <form action="/home" method="POST">
-        {!! csrf_field() !!}
+      <form action="/parties" method="POST">
+        @csrf
         <label class="form-label">Nombre</label></br>
         <input type="text" name="name" id="name" class="form-control"></br>
         <label class="form-label">Photo</label></br>

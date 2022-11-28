@@ -23,13 +23,18 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/song', [App\Http\Controllers\SongController::class, 'index'])->name('song');
+Route::resource('parties', PartyController::class);
 
-Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name('user');
+/*Route::get('/parties/create', function () {
+    return view('parties.create');
+});
+Route::get('/parties/update', function () {
+    return view('parties.update');
+});
+*/
 
-Route::get('/role', [App\Http\Controllers\RoleController::class, 'index'])->name('role');
 
 
 
-//Route::get('/home', [App\Http\Controllers\PartyController::class, 'index'])->name('party');
+
 
