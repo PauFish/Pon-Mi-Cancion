@@ -14,7 +14,7 @@
         <input type="text" name="name" id="name" value="{{$party->name}}" class="form-control"></br>
 
         <label>Photo</label></br>
-        <input type="text" name="photo" id="photo" value="{{$party->photo}}" class="form-control"></br>
+        <input type="file" name="photo" id="photo" value="{{$party->photo}}" class="form-control" accept="image/*"></br>
 
         <a href="/home" class="btn btn-danger">Volver</a>
         <button type="submit"  class="btn btn-success">Editar</br>

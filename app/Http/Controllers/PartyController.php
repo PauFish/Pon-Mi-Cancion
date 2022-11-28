@@ -37,17 +37,6 @@ class PartyController extends Controller
         return view('parties.create');
     }
 
-    /*
-    public function store(PartyRequest $request) 
-        {
-       $data = $request->validated();
-        $name = $data['name'];
-        $photo = $data['photo'];
-        $result = $this->partyService->store([$name,$photo]);
-        return redirect('/home'); 
-       
-    }
-    */
 
     public function store(Request $request)
     {
@@ -57,8 +46,9 @@ class PartyController extends Controller
         $data->photo = $request->get('photo');
 
         $data->save();
-        
-         return redirect('/home');
+
+        echo '<script>alert("Fiesta creada"), window.location.href ="/home" </script>';
+        //return redirect('/home');
     }
 
     public function destroy($id) {
@@ -66,7 +56,11 @@ class PartyController extends Controller
         return 'Party eliminada con exito';*/
         $data = Party::find($id);
         $data->delete();
-        return redirect('/home');
+        echo '<script>alert("Fiesta eliminada"), window.location.href ="/home" </script>';
+        //return redirect('/home');
+        
+      
+          
     }
 
     public function edit($id) {
@@ -87,6 +81,7 @@ class PartyController extends Controller
 
         $data->save();
         
-         return redirect('/home');
+        echo '<script>alert("Fiesta modificada"), window.location.href ="/home" </script>';
+        //return redirect('/home');
     }
 }  

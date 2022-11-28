@@ -16,8 +16,8 @@
         <label>Artista</label></br>
         <input type="text" name="artist" id="artist" value="{{$song->artist}}" class="form-control"></br>
 
-        <label>Voto</label></br>
-        <input type="text" name="vote" id="vote" value="{{$song->vote}}" class="form-control"></br>
+       
+        <input type="hidden" name="vote" id="vote" value="{{$song->vote}}" class="form-control"></br>
 
         <a href="/home" class="btn btn-danger">Volver</a>
         <button type="submit"  class="btn btn-success">Editar</br>

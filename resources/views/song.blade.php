@@ -7,8 +7,6 @@
         <div class="col-md-15">
             <div class="card">
                 <div class="card-header"><h1>Las Mejores Canciones!!!</h1></div>
-                 <!-- Create -->
-                <a href="{{ url('/songs/create') }}" class="btn btn-success btn-sm" title="Añadir Cancion">Añadir Nueva Canción</a>
                 
                 <div class="card-body">
                     @if (session('status'))
@@ -16,17 +14,24 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    <!-- Create -->
+<a href="{{ url('/songs/create') }}" class="btn btn-success" title="Añadir Cancion">Añadir Canción</a>
+<!-- Para moverse a canciones-->
+<td><a href="/home" class="btn btn-warning" type="button" >Ver Fiestas</a></td>
+<div class="songs_container">
+<br>
     <div class="card">
+    
         <div class="card-body">
+        
 @php
     $songs=\App\Models\Song::all();
 @endphp
 
 
-   
 
 <div class="songs_container">
-    
+
     <h2 class="text-white bg-primary">Vota tu canción preferida YA!</h2>
     
 <table id="songs_Table" class="table table-striped">
