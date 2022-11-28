@@ -53,7 +53,7 @@
             <td>{{$party->name}}</td>
             <td>{{$party->photo}}</td>
             <!-- para moverse a canciones-->
-            <td><a href="/song"><button class="btn btn-primary" type="button" >Ver Canciones</button></a></td>
+            <td><a href="/song" class="btn btn-primary" type="button" >Ver Canciones</a></td>
             <!-- editar fiestas-->
             <td><a href="/parties/{{$party->id}}/edit" class="btn btn-info">Editar Fiesta</a></td>       
             <!-- eliminar fiestas-->

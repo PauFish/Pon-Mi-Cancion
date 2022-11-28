@@ -19,19 +19,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/song', function () {
+    return view('song');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// Gestiona el CRUD de parties 
 Route::resource('parties', PartyController::class);
 
-/*Route::get('/parties/create', function () {
-    return view('parties.create');
-});
-Route::get('/parties/update', function () {
-    return view('parties.update');
-});
-*/
+
+
 
 
 

@@ -16,7 +16,7 @@
     <div class="card">
         <div class="card-body">
 @php
-    $parties=\App\Models\Song::all();
+    $songs=\App\Models\Song::all();
 @endphp
 
 <div class="songs_container">
