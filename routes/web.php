@@ -6,6 +6,7 @@ use App\Http\Controllers\PartyController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SongController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +35,7 @@ Route::get('/userSong', function () {
     return view('userSong');
 });
 
-Auth::routes();
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -43,6 +44,36 @@ Route::resource('parties', PartyController::class);
 
 Route::resource('songs', SongController::class);
 
-
-
-
+/*-----------------------------------------------*/
+Auth::routes();
+  
+/*------------------------------------------
+--------------------------------------------
+All Normal Users Routes List
+--------------------------------------------
+--------------------------------------------*/
+Route::middleware(['auth', 'user-access:user'])->group(function () {
+  
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+});
+  
+/*------------------------------------------
+--------------------------------------------
+All Admin Routes List
+--------------------------------------------
+--------------------------------------------*/
+Route::middleware(['auth', 'user-access:admin'])->group(function () {
+  
+    Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
+});
+  
+/*------------------------------------------
+--------------------------------------------
+All Admin Routes List
+--------------------------------------------
+--------------------------------------------*/
+Route::middleware(['auth', 'user-access:manager'])->group(function () {
+  
+    Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
+});
+ 

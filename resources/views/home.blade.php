@@ -7,8 +7,8 @@
     <div class="row justify-content-center">
         <div class="col-md-15">
             <div class="card">
-                <div class="card-header">
-                    <h1>Dj - Administrador de Fiestas</h1>
+                <div class="card-header">{{ __('Dashboard') }}
+                    <!--<h1>Dj - Administrador de Fiestas</h1>-->
                 </div>
                 <div class="card-body">
                     @if (session('status'))

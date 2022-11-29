@@ -41,8 +41,6 @@
             background-repeat: no-repeat;
             background-size: cover;
             
-            
-            
         }
         /*letras en welcome que aparecen*/
            .ani-font {

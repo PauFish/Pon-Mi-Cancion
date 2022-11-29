@@ -80,24 +80,6 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <label for="role_id" style="color: #FF6700;" class="col-md-4 col-form-label text-md-end">Yo soy</label>
-
-                            <div class="col-md-6">
-
-                                <select name="role_id" form="registerUser" class="form-control" required autocomplete="new-role_id">
-                                    <option value="1">DJ</option>
-                                    <option value="2" selected>Usuario</option>
-                                </select>
-
-                                @error('role_id')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-
-                            </div>
-                        </div>
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-dark text-white">
