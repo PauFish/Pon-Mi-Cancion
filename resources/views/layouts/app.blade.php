@@ -21,16 +21,67 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.0/css/responsive.bootstrap5.min.css">
 
+<!-- Font Awersome para fuentes e iconos-->
+<script src="https://kit.fontawesome.com/5bb9809fd3.js" crossorigin="anonymous"></script>
 
     <!--Otros-->
     <title>Pon Mi Canción</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+         body {
+            /* Centra y escala el background */
+            background: url(images/bgwelcome.jpeg);
+            width: 100%;
+            height: auto;
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+            
+            
+        }
+        /*letras en welcome que aparecen*/
+           .ani-font {
+	-webkit-animation: ani-font 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: ani-font 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@-webkit-keyframes ani-font {
+  0% {
+    letter-spacing: -3em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 3;
+  }
+}
+@keyframes ani-font {
+  0% {
+    letter-spacing: -3em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 3;
+  }
+}
+   </style>
 </head>
 
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">Pon Mi canción</a>
+            <div class="container" >
+                <a class="navbar-brand " href="{{ url('/') }}" style="color: #FF6700;">Pon Mi Canción</a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -43,18 +94,18 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-auto " >
                         <!-- Authentication Links -->
                         @guest
                         @if (Route::has('login'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <li class="nav-item" >
+                            <a class="nav-link" style="font-weight: bold;" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
                         </li>
                         @endif
 
                         @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link" style="font-weight: bold;"  href="{{ route('register') }}">{{ __('Regisarse') }}</a>
                         </li>
                         @endif
                         @else
@@ -104,8 +155,8 @@
     <script>
         $('#roles_Table').DataTable();
     </script>
-
-
+    
+    
 </body>
 
 </html>
