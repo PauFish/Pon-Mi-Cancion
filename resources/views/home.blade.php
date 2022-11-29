@@ -8,7 +8,7 @@
         <div class="col-md-15">
             <div class="card">
                 <div class="card-header">
-                    <h1>Las Mejores Fiestas Las Haces Tú!!!</h1>
+                    <h1>Dj - Administrador de Fiestas</h1>
                 </div>
                 <div class="card-body">
                     @if (session('status'))

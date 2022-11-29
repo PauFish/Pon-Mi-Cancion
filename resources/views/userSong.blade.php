@@ -7,7 +7,7 @@
         <div class="col-md-15">
             <div class="card">
                 <div class="card-header">
-                    <h1>DJ - Administrador de Canciones</h1>
+                    <h1>Las Mejores Canciones las eliges tu!!!</h1>
                 </div>
 
                 <div class="card-body">
@@ -16,10 +16,8 @@
                         {{ session('status') }}
                     </div>
                     @endif
-                    <!-- Create -->
-                    <a href="{{ url('/songs/create') }}" class="btn btn-success" title="Añadir Cancion">Añadir Canción</a>
-                    <!-- Para moverse a canciones-->
-                    <td><a href="/home" class="btn btn-warning" type="button">Ver Fiestas</a></td>
+
+                    <td><a href="/userParty" class="btn btn-warning" type="button">Volver a Fiestas</a></td>
                     <div class="songs_container">
                         <br>
                         <div class="card">
@@ -39,33 +37,23 @@
                                     <table id="songs_Table" class="table table-striped">
                                         <thead>
                                             <tr>
-                                                <th>ID</th>
                                                 <th>Cancion</th>
                                                 <th>Artista</th>
                                                 <th>Votos</th>
-                                                <th>Editar</th>
-                                                <th>Eliminar</th>
+                                                <th>Vota Tu Canción!</th>
                                             </tr>
                                         </thead>
                                         <!--le pasamos la variable en la que se almaceno todas las Songs en SongController
  y cada vez que entre lo almacena en $song -->
                                         @foreach($songs as $song)
                                         <tr>
-                                            <td>{{$song->id}}</td>
                                             <td>{{$song->title}}</td>
                                             <td>{{$song->artist}}</td>
-                                            <td>{{$song->vote}}</td>
-                                            <!-- editar Canciones-->
-                                            <td><a href="/songs/{{$song->id}}/edit" class="btn btn-info">Editar Canción</a></td>
-                                            <!-- eliminar Canciones-->
-                                            <td>
-                                                <form action="{{route('songs.destroy',$song->id)}}" method='POST'>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button class="btn btn-danger" type="submit">Eliminar Canción</button>
-                                                </form>
+                                            <td>{{$song->vote}}
                                             </td>
-
+                                            <!-- Vota Canciones-->
+                                             <td><a href="{{route('songs.show',$song->id)}}" type="button" class="btn btn-info">VOTA!!!</a></td>
+                                           
 
                                         </tr>
                                         @endforeach
@@ -82,3 +70,5 @@
         </div>
     </div>
     <br>
+
+   

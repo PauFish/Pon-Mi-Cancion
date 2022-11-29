@@ -26,6 +26,14 @@ Route::get('/song', function () {
     return view('song');
 });
 
+Route::get('/userParty', function () {
+    return view('userParty');
+});
+
+Route::get('/userSong', function () {
+    return view('userSong');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -34,3 +42,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('parties', PartyController::class);
 
 Route::resource('songs', SongController::class);
+
+
+
+

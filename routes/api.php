@@ -20,6 +20,3 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
    return $request->user();
 });
 
-Route::resource('roles',RoleController::class);
-Route::resource('users',UserController::class);
-

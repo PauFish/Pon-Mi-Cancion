@@ -62,6 +62,7 @@ class SongController extends Controller
         return view('songs.edit')->with('song',$song);
     }
 
+
     public function update(Request $request, $id){
         
         $data = Song::find($id);
@@ -73,5 +74,15 @@ class SongController extends Controller
         $data->save();
         echo '<script>alert("Canción modificada"), window.location.href ="/song" </script>';
         //return redirect('/song');
+    }
+
+    public function show(Request $request,$id)
+    {
+        {
+            //incrementa en 1 al votar
+            Song::find($id)->increment('vote');
+            return view('/userSong');
+
+        }
     }
 }
