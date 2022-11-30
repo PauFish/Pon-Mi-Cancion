@@ -31,10 +31,9 @@
                                 @endphp
 
 
-
                                 <div class="songs_container">
 
-                                    <h2 class="text-white bg-primary">Vota tu canción preferida YA!</h2>
+                                    <h2 class="bg-dark" style="color: #FF6700;">Vota tu canción preferida YA!</h2>
 
                                     <table id="songs_Table" class="table table-striped">
                                         <thead>

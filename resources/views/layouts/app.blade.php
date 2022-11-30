@@ -33,6 +33,20 @@
             margin: 0;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
+        nav {
+            background-color: black;
+        }
+
+        .nav-link{
+            color: white;
+            font-weight: bold;
+        }
+
+        .nav-link:hover{
+            color: #FF6700;
+            
+        }
+
          body {
             /* Centra y escala el background */
             background: url(images/bgwelcome.jpeg);
@@ -77,9 +91,9 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm">
             <div class="container" >
-                <a class="navbar-brand " href="{{ url('/') }}" style="color: #FF6700;">Pon Mi Canción</a>
+                <a class="navbar-brand " href="{{ url('/') }}" style="color: white;">Pon Mi Canción</a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -92,18 +106,18 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto " >
+                    <ul class="navbar-nav ms-auto ">
                         <!-- Authentication Links -->
                         @guest
                         @if (Route::has('login'))
-                        <li class="nav-item" >
-                            <a class="nav-link" style="font-weight: bold;" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
+                        <li class="nav-item">
+                            <a class="nav-link"  href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
                         </li>
                         @endif
 
                         @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" style="font-weight: bold;"  href="{{ route('register') }}">{{ __('Regisarse') }}</a>
+                            <a class="nav-link"   href="{{ route('register') }}">{{ __('Registrarse') }}</a>
                         </li>
                         @endif
                         @else

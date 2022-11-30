@@ -43,15 +43,28 @@
             background-size: cover;
 
         }
+        nav {
+            background: linear-gradient(281deg, rgba(43,41,38,1) 0%, rgba(255,136,0,1) 59%);
+        }
+
+        .nav-link{
+            color: white;
+            font-weight: bold;
+        }
+
+        .nav-link:hover{
+            color: #FF6700;
+            
+        }
     </style>
 </head>
 
 <body>
 
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand " href="{{ url('/') }}" style="color: #FF6700;">Pon Mi Canción</a>
+    <nav class="navbar navbar-expand-md navbar-light shadow-sm">
+            <div class="container" >
+                <a class="navbar-brand " style="color: white;">Pon Mi Canción</a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -128,7 +141,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-15">
                     <div class="card">
-                        <div class="card-header">Hola Admin de la Web
+                        <div class="card-header text-danger">Hola ADMIN
 
                         </div>
                         <div class="card-body">
@@ -149,7 +162,7 @@
                                         $parties=\App\Models\Party::all();
                                         @endphp
 
-                                        <table id="parties_Table" class="table table-striped">
+                                        <table id="parties_Table" class="table table-striped" style="color: #FF6700">
 
                                             <thead>
                                                 <tr>
@@ -191,7 +204,7 @@
             </div>
             <br>
             <div class="card-header">
-                <h1 style="color: white">Administrador de Canciones</h1>
+                <h1 style="color: #FF6700">Administrador de Canciones</h1>
             </div>
 
             <div class="card-body">
@@ -215,7 +228,7 @@
 
                             <div class="songs_container">
 
-                                <table id="songs_Table" class="table table-striped">
+                                <table id="songs_Table" class="table table-striped" style="color: #FF6700">
                                     <thead>
                                         <tr>
                                             <th>ID</th>
@@ -257,7 +270,5 @@
                 </div>
             </div>
         </div>
-
     </body>
-
 </html>

@@ -1,9 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-
-
-<div class="container">
+<style>
+.card {
+            /* Centra y escala el background */
+            background: url(images/bgwelcome.jpeg);
+            width: 100%;
+            height: auto;
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }
+        </style>
+       
+<div class="container" >
     <div class="row justify-content-center">
         <div class="col-md-15">
             <div class="card">
@@ -33,7 +43,7 @@
 
                                 <h2 class="text-white bg-primary">Selecciona Tu Fiesta YA!!</h2>
 
-                                <table id="parties_Table" class="table table-striped">
+                                <table id="parties_Table" class="table table-striped" >
 
                                     <thead>
                                         <tr>
@@ -78,3 +88,6 @@
             </div>
         </div>
     </div>
+
+
+    

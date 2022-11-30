@@ -17,11 +17,7 @@
                     </div>
                     @endif
 
-
-
-
                     <div class="parties_container">
-                        <br>
                         <div class="card">
                             <div class="card-body">
 
@@ -29,7 +25,7 @@
                                 $parties=\App\Models\Party::all();
                                 @endphp
 
-                                <h2 class="text-white bg-primary">Selecciona Tu Fiesta YA!!</h2>
+                                <h2 class="bg-dark" style="color: #FF6700;">Selecciona Tu Fiesta YA!!</h2>
 
                                 <table id="parties_Table" class="table table-striped">
 
