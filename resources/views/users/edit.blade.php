@@ -27,7 +27,7 @@
             <label>Roles:  Admin=1  Dj=2  Usuario=0 </label></br>
             <input type="text" name="type" id="type" value="{{$user->type}}" class="form-control"></br>
 
-            <a href="/home" class="btn btn-danger">Volver</a>
+            <a href="/admin.home" class="btn btn-danger">Volver</a>
             <button type="submit" class="btn btn-success">Guardar</br>
           </form>
         </div>

@@ -343,7 +343,7 @@
                                                     <tr>
                                                         <td>{{$role->id}}</td>
                                                         <td>{{$role->name}}</td>
-                                                        <td>{{$role->fk_role}}</td>
+                                                        <td>{{$role->fk_type}}</td>
                                                     </tr>
                                                     @endforeach
                                                     <tbody>

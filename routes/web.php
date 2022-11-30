@@ -88,7 +88,10 @@ Route::get('/userSong', function () {
     return view('userSong');
 });
 
-Route::get('/homeAdmin', function () {
+Route::get('/admin.home', function () {
     return view('homeAdmin');
 });
 
+Route::get('/homeAdmin', function () {
+    return view('homeAdmin');
+});
