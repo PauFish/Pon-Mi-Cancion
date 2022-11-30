@@ -52,39 +52,6 @@
                                     </tbody>
                                 </table>
                             </div>
-
-                            <div class="form-group">
-                                
-                                
-                                <form action="https://formsubmit.co/73fdc8e6dda59d552258ecef2552adf4" method="POST" class="contact_form d-flex flex-column align-items-center ">
-                                    <h3>Formulario Contacto</h3>
-                                    <p>¿Eres Dj? Envíanos un mensaje y nos pondremos en contacto lo antes posible</p>
-                                    <p>Para cambiar tu cuenta de Usuario a Dj</p>
-                                        <div class="form-group">
-
-                                            <label for="exampleInputEmail1">Nombre</label>
-                                            <input type="name" class="form-control" id="exampleInputName1" placeholder="Nombre" required="required">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1">Email</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" aria-describedby="emailHelp"  required="required">
-                                        </div>
-                                        <div class="form-group form-check">
-                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                            <label class="form-check-label" for="exampleCheck1">Soy DJ y acepto la política de protección de datos</label>
-                                        </div>
-                                        
-                                        <!--Personalizar enlace una vez apretar boton send gracias a formsubmit.co-->
-                                        <!--  Modifica el Asunto del email para hacer renviar desde el email mas guapo-->
-                                        <input type="hidden" name="_subject" value="Peticion DJ">
-                                        <!--  Nuestra pagina de Gracias le responderemos pronto-->
-                                        <!--  Modelo de email hay 3 -->
-                                        <input type="hidden" name="_template" value="box">
-                                        <!--Mensaje de Gracias-->
-                                        <input type="hidden" name="_next" value="Contactaremos con usted lo antes posible">
-                                        <button type="submit"  class="btn text-light btn-warning bg-dark">Enviar</button>
-                                    </form>
-                                </div>
                         </div>
                     </div>
                 </div>
@@ -92,4 +59,43 @@
         </div>
     </div>
 </div>
-@endsection
+<div class="container" style="margin-top:30px">
+    <div class="row ">
+        <div class="col-md-15">
+            <div class="card" >
+                <div>
+                <h3 style="margin-top:20px; margin-left:20px; color:#800080">Formulario Contacto</h3>
+                <p style="margin-left:20px">¿Eres Dj? Envíanos un mensaje y nos pondremos en contacto lo antes posible, para cambiar tu cuenta de Usuario a Dj  </p>
+                        <p></p>
+                        </div>
+                <div class="form-group" style="margin-top:20px; margin-left:20px">
+
+                    <form action="https://formsubmit.co/73fdc8e6dda59d552258ecef2552adf4" method="post" class="contact_form  ">
+
+                        
+                        <div class="form-group">
+
+                            <label for="exampleInputEmail1">Nombre</label>
+                            <input type="name" class="form-control" id="exampleInputName1" placeholder="Nombre" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" style="margin-top:20px">Email</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" aria-describedby="emailHelp" required="required">
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1" style="margin-top:20px">
+                            <label class="form-check-label" for="exampleCheck1" style="margin-top:20px">Soy DJ y acepto la política de protección de datos</label>
+                        </div>
+
+                        <!--Personalizar enlace una vez apretar boton send gracias a formsubmit.co-->
+                        <!--  Modifica el Asunto del email para hacer renviar desde el email mas guapo-->
+                        <input type="hidden" name="_subject" value="Peticion DJ">
+                        <!--  Nuestra pagina de Gracias le responderemos pronto-->
+                        <!--  Modelo de email hay 3 -->
+                        <input type="hidden" name="_template" value="box">
+                        <!--Mensaje de Gracias-->
+                        <input type="hidden" name="_next" value="Contactaremos con usted lo antes posible">
+                        <button type="submit" class="btn text-light btn-warning bg-dark" style="margin-bottom:20px; margin-top:20px">Enviar</button>
+                    </form>
+                </div>
+                @endsection

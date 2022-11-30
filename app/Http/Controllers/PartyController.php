@@ -47,7 +47,7 @@ class PartyController extends Controller
 
         $data->save();
 
-        echo '<script>alert("Fiesta creada"), window.location.href ="/home" </script>';
+        echo '<script>alert("Fiesta creada"), window.location.href ="/djHome" </script>';
         //return redirect('/home');
     }
 
@@ -56,7 +56,7 @@ class PartyController extends Controller
         return 'Party eliminada con exito';*/
         $data = Party::find($id);
         $data->delete();
-        echo '<script>alert("Fiesta eliminada"), window.location.href ="/home" </script>';
+        echo '<script>alert("Fiesta eliminada"), window.location.href ="/djHome" </script>';
         //return redirect('/home');
          
     }
@@ -79,7 +79,7 @@ class PartyController extends Controller
 
         $data->save();
         
-        echo '<script>alert("Fiesta modificada"), window.location.href ="/home" </script>';
-        //return redirect('/home');
+        echo '<script>alert("Fiesta modificada"), window.location.href ="/djHome" </script>';
+        
     }
 }  

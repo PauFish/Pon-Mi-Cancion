@@ -1,24 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<style>
-.card {
-            /* Centra y escala el background */
-            background: url(images/bgwelcome.jpeg);
-            width: 100%;
-            height: auto;
-            background-repeat: no-repeat;
-            background-size: cover;
-            
-        }
-        </style>
+
+      
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-15">
             <div class="card">
                
                 <div class="card-header d-flex  align-items-center">
-                <img src="images/logo.webp">
                     <h1>Introduce una fiesta</h1>
                 </div>
                 <div class="card-body">
@@ -78,17 +68,12 @@
                                     </tbody>
                                 </table>
                             </div>
-
-                          
-
-
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    
     @endsection
     
