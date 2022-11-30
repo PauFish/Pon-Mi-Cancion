@@ -9,7 +9,7 @@
             <div class="card">
                
                 <div class="card-header d-flex  align-items-center">
-                    <h1>Introduce una fiesta</h1>
+                    <h1>Hola DJ</h1>
                 </div>
                 <div class="card-body">
                     @if (session('status'))

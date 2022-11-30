@@ -37,7 +37,7 @@ class SongController extends Controller
         $data->vote = $request->get('vote');
 
         $data->save();
-        echo '<script>alert("Canción creada"), window.location.href ="/song" </script>';
+        echo '<script>alert("Canción creada"), window.location.href ="/djSong" </script>';
          //return redirect('/song');
        
     }
@@ -48,7 +48,7 @@ class SongController extends Controller
         */
         $data = Song::find($id);
         $data->delete();
-        echo '<script>alert("Canción eliminada"), window.location.href ="/song" </script>';
+        echo '<script>alert("Canción eliminada"), window.location.href ="/djSong" </script>';
         //return redirect('/song');
     }
 
@@ -67,7 +67,7 @@ class SongController extends Controller
         $data->vote = $request->get('vote');
 
         $data->save();
-        echo '<script>alert("Canción modificada"), window.location.href ="/song" </script>';
+        echo '<script>alert("Canción modificada"), window.location.href ="/djSong" </script>';
         //return redirect('/song');
     }
 
@@ -76,7 +76,8 @@ class SongController extends Controller
         {
             //incrementa en 1 al votar
             Song::find($id)->increment('vote');
-            return view('/userSong');
+            
+            echo '<script>alert("Canción Votada Con Éxito"), window.location.href ="/userSong" </script>';
 
         }
     }

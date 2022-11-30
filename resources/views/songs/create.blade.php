@@ -19,7 +19,7 @@
 
             <input type="hidden" name="vote" id="vote" value="0" class="form-control"></br>
 
-            <a href="/home" class="btn btn-danger">Volver</a>
+            <a href="/djSong" class="btn btn-danger">Volver</a>
             <button type="submit" class="btn btn-primary">Guardar</button>
 
           </form>

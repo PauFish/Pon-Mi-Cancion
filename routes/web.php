@@ -66,7 +66,7 @@ All Admin Routes List
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:manager'])->group(function () {
   
-    Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
+    Route::get('managerHome', [HomeController::class, 'managerHome'])->name('manager.home');
 });
  
 
@@ -75,6 +75,9 @@ Route::get('/djSong', function () {
     return view('djSong');
 });
 Route::get('/djHome', function () {
+    return view('djHome');
+});
+Route::get('/djParty', function () {
     return view('djHome');
 });
 Route::get('/userParty', function () {
@@ -88,3 +91,4 @@ Route::get('/userSong', function () {
 Route::get('/homeAdmin', function () {
     return view('homeAdmin');
 });
+

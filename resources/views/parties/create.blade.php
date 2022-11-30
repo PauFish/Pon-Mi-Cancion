@@ -17,7 +17,7 @@
             <label class="form-label">Photo</label></br>
             <input type="file" name="photo" id="photo" class="form-control" accept="image/*"></br>
 
-            <a href="/home" class="btn btn-danger">Volver</a>
+            <a href="/djParty" class="btn btn-danger">Volver</a>
             <button type="submit" class="btn btn-primary">Guardar</button>
           </form>
         </div>

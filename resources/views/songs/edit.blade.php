@@ -21,7 +21,7 @@
 
             <input type="hidden" name="vote" id="vote" value="{{$song->vote}}" class="form-control"></br>
 
-            <a href="/home" class="btn btn-danger">Volver</a>
+            <a href="/djSong" class="btn btn-danger">Volver</a>
             <button type="submit" class="btn btn-success">Guardar</br>
 
           </form>

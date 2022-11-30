@@ -17,7 +17,7 @@
             <label>Photo</label></br>
             <input type="file" name="photo" id="photo" value="{{$party->photo}}" class="form-control" accept="image/*"></br>
 
-            <a href="/home" class="btn btn-danger">Volver</a>
+            <a href="/djParty" class="btn btn-danger">Volver</a>
             <button type="submit" class="btn btn-success">Guardar</br>
           </form>
         </div>
