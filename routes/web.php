@@ -23,18 +23,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/song', function () {
-    return view('song');
-});
-
-Route::get('/userParty', function () {
-    return view('userParty');
-});
-
-Route::get('/userSong', function () {
-    return view('userSong');
-});
-
 
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -81,3 +69,18 @@ Route::middleware(['auth', 'user-access:manager'])->group(function () {
     Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
 });
  
+
+
+Route::get('/djSong', function () {
+    return view('djSong');
+});
+Route::get('/djHome', function () {
+    return view('djHome');
+});
+Route::get('/userParty', function () {
+    return view('userParty');
+});
+
+Route::get('/userSong', function () {
+    return view('userSong');
+});

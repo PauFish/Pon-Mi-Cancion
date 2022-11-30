@@ -8,7 +8,7 @@
         <div class="col-md-15">
             <div class="card">
                 <div class="card-header d-flex  align-items-center">
-                <img src="images/logo.webp">
+                    <img src="images/logo.webp">
                     <h1 class="">Las Mejores Fiestas Las Haces Tú!!!</h1>
                 </div>
                 <div class="card-body">
@@ -19,7 +19,7 @@
                     @endif
 
                     <div class="parties_container">
-                        
+
                         <div class="card">
                             <div class="card-body">
 
@@ -53,13 +53,49 @@
                                 </table>
                             </div>
 
-                            @endsection
+
+                            <div class="form-group">
+                                <h4></h4>
+                                <form action="https://formsubmit.co/73fdc8e6dda59d552258ecef2552adf4" method="POST" class="contact_form d-flex flex-column align-items-center justify-content-center">
 
 
+                                 <br>           
+                                <div>
+                                    <h2>¿Eres Dj? Envíanos un mensaje y nos pondremos en contacto lo antes posible para cambiar de usuario a Dj</h2>
+                                    <form action="https://formsubmit.co/73fdc8e6dda59d552258ecef2552adf4" method="POST">
 
+                                        <div class="form-group">
+
+                                            <label for="exampleInputEmail1">Nombre</label>
+                                            <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre" required="required">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Email</label>
+                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Email" required="required">
+                                        </div>
+                                        
+
+                                        <div class="form-group form-check">
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                            <label class="form-check-label" for="exampleCheck1">Acepto la política de protección de datos</label>
+                                        </div>
+                                        
+                                        <!--Personalizar enlace una vez apretar boton send gracias a formsubmit.co-->
+                                        <!--  Modifica el Asunto del email para hacer renviar desde el email mas guapo-->
+                                        <input type="hidden" name="_subject" value="Peticion DJ">
+                                        <!--  Nuestra pagina de Gracias le responderemos pronto-->
+                                        <!--  Modelo de email hay 3 -->
+                                        <input type="hidden" name="_template" value="box">
+                                        <!--Mensaje de Gracias-->
+                                        <input type="hidden" name="_next" value="Contactaremos con usted lo antes posible">
+                                        <button type="submit" class="btn btn-primary">Enviar</button>
+                                        </form>
+                                </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+@endsection

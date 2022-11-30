@@ -20,7 +20,7 @@
                     <!-- Create -->
                     <a href="{{ url('/songs/create') }}" class="btn btn-success" title="Añadir Cancion">Añadir Canción</a>
                     <!-- Para moverse a canciones-->
-                    <td><a href="/home" class="btn text-light btn-warning bg-dark" type="button">Ver Fiestas</a></td>
+                    <td><a href="/djHome" class="btn text-light btn-warning bg-dark" type="button">Volver a Fiestas</a></td>
                     <div class="songs_container">
                         <br>
                         <div class="card">
