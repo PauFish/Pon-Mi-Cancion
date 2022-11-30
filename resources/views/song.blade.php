@@ -1,25 +1,26 @@
 @extends('layouts.app')
 
 @section('content')
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-15">
-            <div class="card">
-                <div class="card-header">
-                    <h1>DJ - Administrador de Canciones</h1>
+            <div class="card" >
+               
+                <div class="card-header d-flex  align-items-center" >
+                <img src="images/logo.webp">
+                    <h1>Listado de Canciones</h1>
                 </div>
-
                 <div class="card-body">
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">
                         {{ session('status') }}
                     </div>
                     @endif
+                    
                     <!-- Create -->
                     <a href="{{ url('/songs/create') }}" class="btn btn-success" title="Añadir Cancion">Añadir Canción</a>
                     <!-- Para moverse a canciones-->
-                    <td><a href="/home" class="btn btn-warning" type="button">Ver Fiestas</a></td>
+                    <td><a href="/home" class="btn text-light btn-warning bg-dark" type="button">Ver Fiestas</a></td>
                     <div class="songs_container">
                         <br>
                         <div class="card">
@@ -30,11 +31,7 @@
                                 $songs=\App\Models\Song::all();
                                 @endphp
 
-
-
                                 <div class="songs_container">
-
-                                    <h2 class="text-white bg-primary">Vota tu canción preferida YA!</h2>
 
                                     <table id="songs_Table" class="table table-striped">
                                         <thead>

@@ -54,7 +54,7 @@
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-dark text-white " >
+                                <button type="submit" class="btn text-light btn-warning bg-dark" >
                                     {{ __('Login') }}
                                 </button>
 

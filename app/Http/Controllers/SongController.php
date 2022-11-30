@@ -19,16 +19,11 @@ class SongController extends Controller
         //$songs = collect(data_get(app()->make(Song::class)->list(),'data'));
         $songs = Song::all();
         
-       
         return view('song', compact('songs'));
        // return response()->json([ 'data'=> $this->songService->index()]);
 
     }
-/*
-    public function show($id){
-        return response()->json(['data'=> $this->songService->show($id)]);
-    }
-*/
+
 
     public function create()
     {

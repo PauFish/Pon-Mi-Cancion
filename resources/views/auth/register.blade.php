@@ -67,7 +67,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="phone"  style="color: #FF6700;"class="col-md-4 col-form-label text-md-end">{{ __('Telëfono') }}</label>
+                            <label for="phone"  style="color: #FF6700;"class="col-md-4 col-form-label text-md-end">{{ __('Teléfono') }}</label>
 
                             <div class="col-md-6">
                                 <input id="phone" type="phone" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
@@ -82,7 +82,7 @@
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-dark text-white">
+                                <button type="submit" class="btn text-light btn-warning bg-dark">
                                     {{ __('Registrarse') }}
                                 </button>
                             </div>

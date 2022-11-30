@@ -7,8 +7,9 @@
     <div class="row justify-content-center">
         <div class="col-md-15">
             <div class="card">
-                <div class="card-header">
-                    <h1>Las Mejores Fiestas Las Haces Tú!!!</h1>
+                <div class="card-header d-flex  align-items-center">
+                <img src="images/logo.webp">
+                    <h1 class="">Las Mejores Fiestas Las Haces Tú!!!</h1>
                 </div>
                 <div class="card-body">
                     @if (session('status'))
@@ -18,6 +19,7 @@
                     @endif
 
                     <div class="parties_container">
+                        
                         <div class="card">
                             <div class="card-body">
 
@@ -25,7 +27,7 @@
                                 $parties=\App\Models\Party::all();
                                 @endphp
 
-                                <h2 class="bg-dark" style="color: #FF6700;">Selecciona Tu Fiesta YA!!</h2>
+                                <h2 style="color: #800080;">Selecciona Tu Fiesta YA!!</h2>
 
                                 <table id="parties_Table" class="table table-striped">
 
@@ -44,7 +46,7 @@
                                             <td>{{$party->name}}</td>
                                             <td>{{$party->photo}}</td>
                                             <!-- Para moverse a canciones-->
-                                            <td><a href="/userSong" class="btn btn-warning" type="button">Ver Canciones</a></td>
+                                            <td><a href="/userSong" class="btn text-light btn-warning bg-dark" type="button">Ver Canciones</a></td>
                                         </tr>
                                         @endforeach
                                     </tbody>

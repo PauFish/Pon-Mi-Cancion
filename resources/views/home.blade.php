@@ -12,13 +12,14 @@
             
         }
         </style>
-       
-<div class="container" >
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-15">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}
-                    <!--<h1>Dj - Administrador de Fiestas</h1>-->
+               
+                <div class="card-header d-flex  align-items-center">
+                <img src="images/logo.webp">
+                    <h1>Introduce una fiesta</h1>
                 </div>
                 <div class="card-body">
                     @if (session('status'))
@@ -30,7 +31,7 @@
                     <!-- Create -->
                     <a href="{{ url('/parties/create') }}" class="btn  btn-success" title="Añadir fiesta">Añadir Fiestas</a>
                     <!-- Para moverse a canciones-->
-                    <td><a href="/song" class="btn btn-warning" type="button">Ver Canciones</a></td>
+                    <td><a href="/song" class="btn text-light btn-warning bg-dark" type="button">Ver Canciones</a></td>
 
                     <div class="parties_container">
                         <br>
@@ -41,7 +42,7 @@
                                 $parties=\App\Models\Party::all();
                                 @endphp
 
-                                <h2 class="text-white bg-primary">Selecciona Tu Fiesta YA!!</h2>
+                                <h2>Fiestas</h2>
 
                                 <table id="parties_Table" class="table table-striped" >
 

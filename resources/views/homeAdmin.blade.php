@@ -43,18 +43,19 @@
             background-size: cover;
 
         }
+
         nav {
-            background: linear-gradient(281deg, rgba(43,41,38,1) 0%, rgba(255,136,0,1) 59%);
+            background: linear-gradient(281deg, rgba(43, 41, 38, 1) 0%, rgba(255, 136, 0, 1) 59%);
         }
 
-        .nav-link{
+        .nav-link {
             color: white;
             font-weight: bold;
         }
 
-        .nav-link:hover{
+        .nav-link:hover {
             color: #FF6700;
-            
+
         }
     </style>
 </head>
@@ -62,8 +63,8 @@
 <body>
 
     <div id="app">
-    <nav class="navbar navbar-expand-md navbar-light shadow-sm">
-            <div class="container" >
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm">
+            <div class="container">
                 <a class="navbar-brand " style="color: white;">Pon Mi Canción</a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -269,6 +270,96 @@
                     </div>
                 </div>
             </div>
-        </div>
+
+            <div class="card-header">
+                <h1 style="color: #FF6700">Administrador Usuarios</h1>
+            </div>
+
+            <div class="card-body">
+                @if (session('status'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('status') }}
+                </div>
+                @endif
+
+                <div class="songs_container">
+                    <br>
+                    <div class="card">
+                        
+
+                            @php
+                            $users=\App\Models\User::all();
+                            @endphp
+
+                            <div class="songs_container">
+
+                                <table id="songs_Table" class="table table-striped" style="color: #FF6700">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Nombre</th>
+                                            <th>Email</th>
+                                            <th>Teléfono</th>
+                                            <th>Role</th>
+                                            <th>Editar</th>
+
+                                        </tr>
+                                    </thead>
+
+                                    @foreach($users as $user)
+                                    <tr>
+                                        <td>{{$user->id}}</td>
+                                        <td>{{$user->name}}</td>
+                                        <td>{{$user->email}}</td>
+                                        <td>{{$user->phone}}</td>
+                                        <td>{{$user->type}}</td>
+                                        <!-- editar Usuario-->
+                                        <td><a href="/users/{{$user->id}}/edit" class="btn btn-info">Editar Role</a></td>
+                                        <!-- eliminar Usuario-->
+
+                                    </tr>
+                                    @endforeach
+                                    <tbody>
+                                </table>
+                            </div>
+
+
+                            <div class="card-body">
+
+                                @php
+                                $roles=\App\Models\Role::all();
+                                @endphp
+
+                                <div class="songs_container">
+
+                                    <table id="songs_Table" class="table table-striped" style="color: #FF6700">
+                                        <thead>
+                                            <tr>
+                                                <th>id</th>
+                                                <th>Nombre</th>
+                                                <th>Numero de Role</th>
+                                            </tr>
+                                        </thead>
+                                        <!--le pasamos la variable en la que se almaceno todas las Songs en SongController
+ y cada vez que entre lo almacena en $song -->
+                                        @foreach($roles as $role)
+                                        <tr>
+                                            <td>{{$role->id}}</td>
+                                            <td>{{$role->name}}</td>
+                                            <td>{{$role->fk_role}}</td>
+                                        </tr>
+                                        @endforeach
+                                        <tbody>
+                                    </table>
+                                    <!-- Create -->
+                        <a href="{{ url('/roles/create') }}" class="btn btn-success" title="Añadir Role">Añadir Role</a>
+                                                <div class="card-body">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </body>
+
 </html>

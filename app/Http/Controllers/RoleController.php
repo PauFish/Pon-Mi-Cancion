@@ -7,6 +7,7 @@ use App\Providers\Roles\RoleService;
 use App\Providers\RoleServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Models\Role;
 
 class RoleController extends Controller
 {
@@ -16,20 +17,32 @@ class RoleController extends Controller
     }
 
     public function index(){
-        return response()->json([ 'data'=> $this->roleService->index()]);
+       
+        $roles = Role::all();
+        
+        return view('role', compact('roles'));
+       
+
     }
 
     public function show($id){
         return response()->json(['data'=> $this->roleService->show($id)]);
     }
+    public function create()
+    {
+        return view('roles.create');
+    }
+    public function store(Request $request){
+        $data= new Role();
 
-    public function store(RoleRequest $request){
-        $data = $request->validated();
-        $name = $data['name'];
-        $result = $this->roleService->store($name);
-        return 'Role creado con exito';
+        $data->name = $request->get('name');
+       
+        $data->save();
+        echo '<script>alert("Role Creado con Éxito"), window.location.href ="/song" </script>';
+        
        
     }
+
 
     public function destroy($id) {
         $this->roleService->delete($id);

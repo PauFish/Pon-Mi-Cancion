@@ -8,7 +8,9 @@
     <div class="row justify-content-center">
         <div class="col-md-15">
             <div class="card">
-                <div class="card-header">
+               
+                <div class="card-header d-flex  align-items-center">
+                <img src="images/logo.webp">
                     <h1>Las Mejores Canciones las eliges tu!!!</h1>
                 </div>
 
@@ -18,8 +20,9 @@
                         {{ session('status') }}
                     </div>
                     @endif
-
-                    <td><a href="/userParty" class="btn btn-warning" type="button">Volver a Fiestas</a></td>
+                    
+                  
+                    <td><a href="/userParty" class="btn text-light btn-warning bg-dark" type="button">Volver a Fiestas</a></td>
                     <div class="songs_container">
                         <br>
                         <div class="card">
@@ -33,7 +36,7 @@
 
                                 <div class="songs_container">
 
-                                    <h2 class="bg-dark" style="color: #FF6700;">Vota tu canción preferida YA!</h2>
+                                    <h2 style="color: #800080">Vota tu canción preferida YA!</h2>
 
                                     <table id="songs_Table" class="table table-striped">
                                         <thead>
@@ -53,7 +56,7 @@
                                             <td>{{$song->vote}}
                                             </td>
                                             <!-- Vota Canciones-->
-                                             <td><a href="{{route('songs.show',$song->id)}}" type="button" class="btn btn-info">VOTA!!!</a></td>
+                                             <td><a href="{{route('songs.show',$song->id)}}" type="button" class="btn text-light btn-warning bg-dark">VOTA!!!</a></td>
                                            
 
                                         </tr>

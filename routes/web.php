@@ -44,6 +44,10 @@ Route::resource('parties', PartyController::class);
 
 Route::resource('songs', SongController::class);
 
+Route::resource('users', UserController::class);
+
+Route::resource('roles', RolesController::class);
+
 /*-----------------------------------------------*/
 Auth::routes();
   
