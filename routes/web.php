@@ -34,7 +34,7 @@ Route::resource('songs', SongController::class);
 
 Route::resource('users', UserController::class);
 
-Route::resource('roles', RolesController::class);
+Route::resource('roles', RoleController::class);
 
 /*-----------------------------------------------*/
 Auth::routes();
@@ -83,4 +83,8 @@ Route::get('/userParty', function () {
 
 Route::get('/userSong', function () {
     return view('userSong');
+});
+
+Route::get('/homeAdmin', function () {
+    return view('homeAdmin');
 });

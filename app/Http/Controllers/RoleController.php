@@ -38,7 +38,7 @@ class RoleController extends Controller
         $data->name = $request->get('name');
        
         $data->save();
-        echo '<script>alert("Role Creado con Éxito"), window.location.href ="/song" </script>';
+        echo '<script>alert("Role Creado con Éxito"), window.location.href ="/homeAdmin" </script>';
         
        
     }

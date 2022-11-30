@@ -53,31 +53,25 @@
                                 </table>
                             </div>
 
-
                             <div class="form-group">
-                                <h4></h4>
-                                <form action="https://formsubmit.co/73fdc8e6dda59d552258ecef2552adf4" method="POST" class="contact_form d-flex flex-column align-items-center justify-content-center">
-
-
-                                 <br>           
-                                <div>
-                                    <h2>¿Eres Dj? Envíanos un mensaje y nos pondremos en contacto lo antes posible para cambiar de usuario a Dj</h2>
-                                    <form action="https://formsubmit.co/73fdc8e6dda59d552258ecef2552adf4" method="POST">
-
+                                
+                                
+                                <form action="https://formsubmit.co/73fdc8e6dda59d552258ecef2552adf4" method="POST" class="contact_form d-flex flex-column align-items-center ">
+                                    <h3>Formulario Contacto</h3>
+                                    <p>¿Eres Dj? Envíanos un mensaje y nos pondremos en contacto lo antes posible</p>
+                                    <p>Para cambiar tu cuenta de Usuario a Dj</p>
                                         <div class="form-group">
 
                                             <label for="exampleInputEmail1">Nombre</label>
-                                            <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre" required="required">
+                                            <input type="name" class="form-control" id="exampleInputName1" placeholder="Nombre" required="required">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Email</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Email" required="required">
+                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" aria-describedby="emailHelp"  required="required">
                                         </div>
-                                        
-
                                         <div class="form-group form-check">
                                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                            <label class="form-check-label" for="exampleCheck1">Acepto la política de protección de datos</label>
+                                            <label class="form-check-label" for="exampleCheck1">Soy DJ y acepto la política de protección de datos</label>
                                         </div>
                                         
                                         <!--Personalizar enlace una vez apretar boton send gracias a formsubmit.co-->
@@ -88,8 +82,8 @@
                                         <input type="hidden" name="_template" value="box">
                                         <!--Mensaje de Gracias-->
                                         <input type="hidden" name="_next" value="Contactaremos con usted lo antes posible">
-                                        <button type="submit" class="btn btn-primary">Enviar</button>
-                                        </form>
+                                        <button type="submit"  class="btn text-light btn-warning bg-dark">Enviar</button>
+                                    </form>
                                 </div>
                         </div>
                     </div>
