@@ -79,7 +79,7 @@ class UserController extends Controller
         $data->type = $request->get('type');
 
         $data->save();
-        echo '<script>alert("Usuario Modificado Con Éxito"), window.location.href ="/admin/home" </script>';
+        echo '<script>alert("Usuario Modificado Con Éxito"), window.location.href ="/homeAdmin" </script>';
         //return redirect('/user');
     }
 }

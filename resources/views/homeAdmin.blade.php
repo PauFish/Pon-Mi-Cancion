@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -36,8 +36,9 @@
 
         body {
             /* Centra y escala el background */
-            background-color: black;
-            width: 100%;
+            /*<img src="images\bgwelcome.jpeg" alt="Italian Trulli">*/
+            background-image: url("images/bgboss.jpeg");
+            width: auto;
             height: auto;
             background-repeat: no-repeat;
             background-size: cover;
@@ -45,7 +46,7 @@
         }
 
         nav {
-            background: #800080;
+            background: black;
         }
 
         .nav-link {
@@ -115,12 +116,7 @@
             </div>
         </nav>
     </div>
-
-
-
- 
-        <br>
-        <div class="container">
+            <div class="container" style="margin-top:20px">
             <div class="row ">
                 <div class="col-md-15">
                     <div class="card">

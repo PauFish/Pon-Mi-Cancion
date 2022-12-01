@@ -2,7 +2,18 @@
 
 @section('content')
 
-      
+<style>
+body {
+            /* Centra y escala el background */
+            /*<img src="images\bgwelcome.jpeg" alt="Italian Trulli">*/
+            background-image: url("images/dj.webp");
+            width: auto;
+            height: auto;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        } 
+</style>             
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-15">
