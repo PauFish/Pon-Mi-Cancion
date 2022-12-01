@@ -1,13 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+body {
+            background-image: url("images/dj.webp");
+           
+
+        } 
+</style>   
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-15">
             <div class="card" >
                
                 <div class="card-header d-flex  align-items-center" >
-                <img src="images/logo.webp">
+               
                     <h1>Listado de Canciones</h1>
                 </div>
                 <div class="card-body">

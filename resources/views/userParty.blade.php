@@ -46,7 +46,7 @@
                                             <td>{{$party->name}}</td>
                                             <td>{{$party->photo}}</td>
                                             <!-- Para moverse a canciones-->
-                                            <td><a href="/userSong" class="btn text-light btn-warning bg-dark" type="button">Ver Canciones</a></td>
+                                            <td><a href="/userSong" class="btn text-light btn-warning bg-dark" style="" type="button">Ver</a></td>
                                         </tr>
                                         @endforeach
                                     </tbody>

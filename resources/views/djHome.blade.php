@@ -4,13 +4,9 @@
 
 <style>
 body {
-            /* Centra y escala el background */
-            /*<img src="images\bgwelcome.jpeg" alt="Italian Trulli">*/
+           
             background-image: url("images/dj.webp");
-            width: auto;
-            height: auto;
-            background-repeat: no-repeat;
-            background-size: cover;
+          
 
         } 
 </style>             

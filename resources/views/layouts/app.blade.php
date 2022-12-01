@@ -48,14 +48,17 @@
         }
 
          body {
-            /* Centra y escala el background */
+           
             background: url(images/bgwelcome.jpeg);
             width: 100%;
             height: auto;
             background-repeat: no-repeat;
             background-size: cover;
+            background-attachment: fixed;
             
         }
+
+    
         /*letras en welcome que aparecen*/
            .ani-font {
 	-webkit-animation: ani-font 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
@@ -95,8 +98,8 @@
             <div class="container" >
                 <a class="navbar-brand " href="{{ url('/') }}" style="color: white;">Pon Mi Canción</a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon navbar-dark" ></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">

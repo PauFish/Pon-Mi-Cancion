@@ -41,10 +41,10 @@
                                     <table id="songs_Table" class="table table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Cancion</th>
+                                                <th>Canción</th>
                                                 <th>Artista</th>
                                                 <th>Votos</th>
-                                                <th>Vota Tu Canción!</th>
+                                                <th>vota</th>
                                             </tr>
                                         </thead>
                                         <!--le pasamos la variable en la que se almaceno todas las Songs en SongController
@@ -56,7 +56,7 @@
                                             <td>{{$song->vote}}
                                             </td>
                                             <!-- Vota Canciones-->
-                                             <td><a href="{{route('songs.show',$song->id)}}" type="button" class="btn text-light btn-warning bg-dark">VOTA!!!</a></td>
+                                             <td><a href="{{route('songs.show',$song->id)}}" type="button" class="btn text-light btn-warning bg-dark ">Vota</a></td>
                                            
 
                                         </tr>
