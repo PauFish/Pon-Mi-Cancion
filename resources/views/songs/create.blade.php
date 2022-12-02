@@ -13,17 +13,12 @@
             @csrf
             <label class="form-label">Cancion</label></br>
             <input type="text" name="title" id="title" class="form-control"></br>
-
             <label class="form-label">Artista</label></br>
             <input type="text" name="artist" id="artist" class="form-control"></br>
-
             <input type="hidden" name="vote" id="vote" value="0" class="form-control"></br>
-
             <a href="/djSong" class="btn btn-danger">Volver</a>
             <button type="submit" class="btn btn-primary">Guardar</button>
-
           </form>
-
         </div>
       </div>
     </div>

@@ -1,20 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-<style>
-body {
-            background-image: url("images/dj.webp");
-           
 
-        } 
-</style>   
+<style>
+    body {
+        background-image: url("images/dj.webp");
+
+
+    }
+</style>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-15">
-            <div class="card" >
-               
-                <div class="card-header d-flex  align-items-center" >
-               
+            <div class="card">
+                <div class="card-header d-flex  align-items-center">
                     <h1>Listado de Canciones</h1>
                 </div>
                 <div class="card-body">
@@ -23,7 +23,6 @@ body {
                         {{ session('status') }}
                     </div>
                     @endif
-                    
                     <!-- Create -->
                     <a href="{{ url('/songs/create') }}" class="btn btn-success" title="Añadir Cancion">Añadir Canción</a>
                     <!-- Para moverse a canciones-->
@@ -31,15 +30,8 @@ body {
                     <div class="songs_container">
                         <br>
                         <div class="card">
-
                             <div class="card-body">
-
-                                @php
-                                $songs=\App\Models\Song::all();
-                                @endphp
-
                                 <div class="songs_container">
-
                                     <table id="songs_Table" class="table table-striped">
                                         <thead>
                                             <tr>
@@ -52,7 +44,10 @@ body {
                                             </tr>
                                         </thead>
                                         <!--le pasamos la variable en la que se almaceno todas las Songs en SongController
- y cada vez que entre lo almacena en $song -->
+                                            y cada vez que entre lo almacena en $song -->
+                                        @php
+                                        $songs=\App\Models\Song::all();
+                                        @endphp
                                         @foreach($songs as $song)
                                         <tr>
                                             <td>{{$song->id}}</td>
@@ -69,15 +64,11 @@ body {
                                                     <button class="btn btn-danger" type="submit">Eliminar Canción</button>
                                                 </form>
                                             </td>
-
-
                                         </tr>
                                         @endforeach
                                         <tbody>
                                     </table>
                                 </div>
-
-                                @endsection
                             </div>
                         </div>
                     </div>
@@ -85,4 +76,4 @@ body {
             </div>
         </div>
     </div>
-    <br>
+    @endsection

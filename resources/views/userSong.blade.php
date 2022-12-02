@@ -64,8 +64,7 @@
                                         <tbody>
                                     </table>
                                 </div>
-
-                                @endsection
+                                
                             </div>
                         </div>
                     </div>
@@ -73,6 +72,7 @@
             </div>
         </div>
     </div>
-    <br>
+<!-- Termina todas las seccionas inicializadas al principio -->
+@endsection
 
    

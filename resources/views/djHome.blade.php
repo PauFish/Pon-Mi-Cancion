@@ -3,18 +3,15 @@
 @section('content')
 
 <style>
-body {
-           
-            background-image: url("images/dj.webp");
-          
+    body {
+        background-image: url("images/dj.webp");
+    }
+</style>
 
-        } 
-</style>             
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-15">
             <div class="card">
-               
                 <div class="card-header d-flex  align-items-center">
                     <h1>Hola DJ</h1>
                 </div>
@@ -24,25 +21,16 @@ body {
                         {{ session('status') }}
                     </div>
                     @endif
-
                     <!-- Create -->
                     <a href="{{ url('/parties/create') }}" class="btn  btn-success" title="Añadir fiesta">Añadir Fiestas</a>
                     <!-- Para moverse a canciones-->
                     <td><a href="/djSong" class="btn text-light btn-warning bg-dark" type="button">Ver Canciones</a></td>
-
                     <div class="parties_container">
                         <br>
                         <div class="card">
                             <div class="card-body">
-
-                                @php
-                                $parties=\App\Models\Party::all();
-                                @endphp
-
                                 <h2>Fiestas</h2>
-
-                                <table id="parties_Table" class="table table-striped" >
-
+                                <table id="parties_Table" class="table table-striped">
                                     <thead>
                                         <tr>
                                             <th>ID</th>
@@ -53,18 +41,18 @@ body {
                                         </tr>
                                     </thead>
                                     <!--le pasamos la variable en la que se almaceno todas las parties en PartyController
- y cada vez que entre lo almacena en $party -->
+                                     y cada vez que entre lo almacena en $party -->
                                     <tbody>
+                                        @php
+                                        $parties=\App\Models\Party::all();
+                                        @endphp
                                         @foreach($parties as $party)
                                         <tr>
                                             <td>{{$party->id}}</td>
                                             <td>{{$party->name}}</td>
-                                            
-
                                             <!--<td><img src="{{ asset('/images/{$party->photo}') }}" alt="Party photo" style="width:30px"></td>-->
-                                            <td><img src="\images\dj.jpeg" style="width:80px"></td>
+                                            <td><img src="\images\rave.jpeg" style="width:80px"></td>
                                             <!-- Para moverse a canciones-->
-
                                             <!-- editar fiestas-->
                                             <td><a href="/parties/{{$party->id}}/edit" class="btn btn-info">Editar Fiesta</a></td>
                                             <!-- eliminar fiestas-->
@@ -86,6 +74,4 @@ body {
             </div>
         </div>
     </div>
-    
-    @endsection
-    
+@endsection

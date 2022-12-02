@@ -21,6 +21,5 @@ class UserAccess
         }
           
         return response()->json(['No tienes permisos']);
-        /* return response()->view('errors.check-permission'); */
     }
 }
