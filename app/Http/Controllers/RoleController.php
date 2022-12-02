@@ -16,13 +16,10 @@ class RoleController extends Controller
         $this->roleService = $roleService;
     }
 
-    public function index(){
-       
+    public function index()
+    {
         $roles = Role::all();
-        
         return view('role', compact('roles'));
-       
-
     }
 
     public function show($id){
@@ -34,13 +31,9 @@ class RoleController extends Controller
     }
     public function store(Request $request){
         $data= new Role();
-
         $data->name = $request->get('name');
-       
         $data->save();
         echo '<script>alert("Role Creado con Éxito"), window.location.href ="/homeAdmin" </script>';
-        
-       
     }
 
 

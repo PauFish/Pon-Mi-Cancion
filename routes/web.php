@@ -23,10 +23,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 // Procesa de los CRUD las rutas (get,post,put,delete) en solo una linea de codigo
 Route::resource('parties', PartyController::class);
 
@@ -36,13 +32,10 @@ Route::resource('users', UserController::class);
 
 Route::resource('roles', RoleController::class);
 
-/*-----------------------------------------------*/
 Auth::routes();
   
 /*------------------------------------------
---------------------------------------------
 All Normal Users Routes List
---------------------------------------------
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:user'])->group(function () {
   
@@ -50,9 +43,7 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
 });
   
 /*------------------------------------------
---------------------------------------------
 All Admin Routes List
---------------------------------------------
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
   
@@ -61,16 +52,13 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 });
   
 /*------------------------------------------
---------------------------------------------
 All Admin Routes List
---------------------------------------------
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:manager'])->group(function () {
   
     Route::get('managerHome', [HomeController::class, 'managerHome'])->name('manager.home');
 });
  
-
 
 Route::get('/djSong', function () {
     return view('djSong');

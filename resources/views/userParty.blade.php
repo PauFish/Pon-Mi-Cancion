@@ -80,7 +80,6 @@
                         <div>
                             <label><input type="checkbox" value="checkbox" required> Soy un Dj y acepto la política de proteccion de datos</label><br>
                         </div>
-
                         <button type="submit" class="btn text-light btn-warning bg-dark" style="margin-bottom:20px; margin-top:20px">Enviar</button>
                     </form>
                 </div>
@@ -88,5 +87,5 @@
         </div>
     </div>
 </div>
-
+<!-- Termina todas las seccionas inicializadas al principio -->
 @endsection

@@ -31,11 +31,9 @@ class SongController extends Controller
     public function store(Request $request)
     {
         $data = new Song();
-
         $data->title = $request->get('title');
         $data->artist = $request->get('artist');
         $data->vote = $request->get('vote');
-
         $data->save();
         echo '<script>alert("Canción creada"), window.location.href ="/djSong" </script>';
     }
@@ -43,7 +41,6 @@ class SongController extends Controller
     public function destroy($id)
     {
         $data = Song::find($id);
-
         $data->delete();
         echo '<script>alert("Canción eliminada"), window.location.href ="/djSong" </script>';
     }
@@ -51,7 +48,6 @@ class SongController extends Controller
     public function edit($id)
     {
         $song = Song::find($id);
-
         return view('songs.edit')->with('song', $song);
     }
 
@@ -59,11 +55,9 @@ class SongController extends Controller
     public function update(Request $request, $id)
     {
         $data = Song::find($id);
-
         $data->title = $request->get('title');
         $data->artist = $request->get('artist');
         $data->vote = $request->get('vote');
-
         $data->save();
         echo '<script>alert("Canción modificada"), window.location.href ="/djSong" </script>';
     }
@@ -72,7 +66,6 @@ class SongController extends Controller
     { {
             //incrementa en 1 al votar
             Song::find($id)->increment('vote');
-
             echo '<script>alert("Canción Votada Con Éxito"), window.location.href ="/userSong" </script>';
         }
     }

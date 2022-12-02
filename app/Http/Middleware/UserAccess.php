@@ -19,7 +19,6 @@ class UserAccess
         if(auth()->user()->type == $userType){
             return $next($request);
         }
-          
         return response()->json(['No tienes permisos']);
     }
 }

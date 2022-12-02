@@ -36,13 +36,11 @@
 
         body {
             /* Centra y escala el background */
-            /*<img src="images\bgwelcome.jpeg" alt="Italian Trulli">*/
             background-image: url("images/bgboss.jpeg");
             width: auto;
             height: auto;
             background-repeat: no-repeat;
             background-size: cover;
-
         }
 
         nav {
@@ -56,7 +54,6 @@
 
         .nav-link:hover {
             color: #FF6700;
-
         }
     </style>
 </head>
@@ -67,17 +64,13 @@
         <nav class="navbar navbar-expand-md navbar-light shadow-sm">
             <div class="container">
                 <a class="navbar-brand " style="color: white;">Pon Mi Canción</a>
-
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
                     </ul>
-
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto ">
                         <!-- Authentication Links -->
@@ -98,13 +91,10 @@
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
-
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                                                     document.getElementById('logout-form').submit();">{{ __('Logout') }}
                                 </a>
-
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
@@ -137,13 +127,7 @@
                                 <div class="card-body ">
                                     <!-- Create -->
                                     <a href="{{ url('/parties/create') }}" class="btn  btn-success" style="margin:10px" title="Añadir fiesta">Añadir Fiestas</a>
-
-                                    @php
-                                    $parties=\App\Models\Party::all();
-                                    @endphp
-
                                     <table id="parties_Table" class="table table-striped" style="color: #FF6700">
-
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
@@ -156,13 +140,15 @@
                                         <!--le pasamos la variable en la que se almaceno todas las parties en PartyController
                                         y cada vez que entre lo almacena en $party -->
                                         <tbody>
+                                            @php
+                                            $parties=\App\Models\Party::all();
+                                            @endphp
                                             @foreach($parties as $party)
                                             <tr>
                                                 <td>{{$party->id}}</td>
                                                 <td>{{$party->name}}</td>
                                                 <!--<td><img src="{{ asset('/images/{$party->photo}') }}" alt="Party photo" style="width:30px"></td>-->
                                                 <td><img src="\images\dj.jpeg" style="width:80px"></td>
-
                                                 <!-- editar fiestas-->
                                                 <td><a href="/parties/{{$party->id}}/edit" class="btn btn-info">Editar Fiesta</a></td>
                                                 <!-- eliminar fiestas-->
@@ -184,7 +170,6 @@
                 </div>
             </div>
 
-
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-15">
@@ -198,13 +183,10 @@
                                     {{ session('status') }}
                                 </div>
                                 @endif
-
                                 <div class="songs_container">
                                     <br>
                                     <div class="card">
-
                                         <div class="card-body">
-
                                             @php
                                             $songs=\App\Models\Song::all();
                                             @endphp
@@ -227,7 +209,7 @@
                                                         </tr>
                                                     </thead>
                                                     <!--le pasamos la variable en la que se almaceno todas las Songs en SongController
- y cada vez que entre lo almacena en $song -->
+                                                    y cada vez que entre lo almacena en $song -->
                                                     @foreach($songs as $song)
                                                     <tr>
                                                         <td>{{$song->id}}</td>
@@ -261,27 +243,17 @@
                         <div class=" row justify-content-center">
                             <div class="col-md-15">
                                 <div class="card">
-                                    <div class="card-header text-danger">Administrador Usuarios
-
-                                    </div>
+                                    <div class="card-header text-danger">Administrador Usuarios</div>
                                     <div class="card-body">
                                         @if (session('status'))
                                         <div class="alert alert-success" role="alert">
                                             {{ session('status') }}
                                         </div>
                                         @endif
-
                                         <div class="songs_container">
                                             <br>
                                             <div class="card">
-
-
-                                                @php
-                                                $users=\App\Models\User::all();
-                                                @endphp
-
                                                 <div class="ysers_container">
-
                                                     <table id="users_Table" class="table table-striped" style="color: #FF6700">
                                                         <thead>
                                                             <tr>
@@ -292,10 +264,11 @@
                                                                 <th>Tipo</th>
                                                                 <th>Role</th>
                                                                 <th>Editar</th>
-
                                                             </tr>
                                                         </thead>
-
+                                                        @php
+                                                        $users=\App\Models\User::all();
+                                                        @endphp
                                                         @foreach($users as $user)
                                                         <tr>
                                                             <td>{{$user->id}}</td>
@@ -307,7 +280,6 @@
                                                             <!-- editar Usuario-->
                                                             <td><a href="/users/{{$user->id}}/edit" class="btn btn-info">Editar Role</a></td>
                                                             <!-- eliminar Usuario-->
-
                                                         </tr>
                                                         @endforeach
                                                         <tbody>
@@ -320,10 +292,6 @@
                                                 <p>Administrador de Roles</p>
                                             </div>
                                             <div class="card-body">
-                                                @php
-                                                $roles=\App\Models\Role::all();
-                                                @endphp
-
                                                 <div class="roles_container">
                                                     <!-- Create -->
                                                     <a href="{{ url('/roles/create') }}" class="btn btn-success" title="Añadir Role">Añadir Role</a>
@@ -337,6 +305,9 @@
                                                                 <th>Role</th>
                                                             </tr>
                                                         </thead>
+                                                        @php
+                                                        $roles=\App\Models\Role::all();
+                                                        @endphp
                                                         <!--le pasamos la variable en la que se almaceno todas las Role en RoleController
                                                                  y cada vez que entre lo almacena en $song -->
                                                         @foreach($roles as $role)
@@ -348,7 +319,6 @@
                                                         @endforeach
                                                         <tbody>
                                                     </table>
-
                                                 </div>
                                             </div>
                                         </div>
@@ -359,7 +329,6 @@
                                 <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
                                 <script src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
                                 <script src="https://cdn.datatables.net/responsive/2.4.0/js/responsive.bootstrap5.min.js"></script>
-
                                 <!--Links de las tablas para que funcionen en datatable-->
                                 <script>
                                     $('#parties_Table').DataTable();

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -8,13 +9,9 @@
                 <div class="card-header">
                     <h3>Registrarse</h3>
                 </div>
-
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}" id="registerUser">
                         @csrf
-
-
-
                         <div class="row mb-3">
                             <label for="name" style="color: #FF6700;" class="col-md-4 col-form-label text-md-end">{{ __('Nombre') }}</label>
 
@@ -28,9 +25,6 @@
                                 @enderror
                             </div>
                         </div>
-
-
-
                         <div class="row mb-3">
                             <label for="email" style="color: #FF6700;" class="col-md-4 col-form-label text-md-end">{{ __('Email') }}</label>
 
@@ -44,7 +38,6 @@
                                 @enderror
                             </div>
                         </div>
-
                         <div class="row mb-3">
                             <label for="phone" style="color: #FF6700;" class="col-md-4 col-form-label text-md-end">{{ __('Teléfono') }}</label>
 
@@ -58,7 +51,6 @@
                                 @enderror
                             </div>
                         </div>
-
                         <div class="row mb-3">
                             <label for="password" style="color: #FF6700;" class="col-md-4 col-form-label text-md-end">{{ __('Contraseña') }}</label>
 
@@ -72,7 +64,6 @@
                                 @enderror
                             </div>
                         </div>
-
                         <div class="row mb-3">
                             <label for="password-confirm" style="color: #FF6700;" class="col-md-4 col-form-label text-md-end">{{ __('Confirmar Contraseña') }}</label>
 
@@ -80,7 +71,6 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn text-light btn-warning bg-dark">

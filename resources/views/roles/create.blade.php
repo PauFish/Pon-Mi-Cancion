@@ -8,12 +8,10 @@
           <h2>Nuevo Role</h2>
         </div>
         <div class="card-body">
-
           <form action="/roles" method="POST">
             @csrf
             <label class="form-label">Nombre</label></br>
             <input type="text" name="name" id="name" class="form-control"></br>
-
             <a href="/homeAdmin" class="btn btn-danger">Volver</a>
             <button type="submit" class="btn btn-primary">Guardar</button>
           </form>

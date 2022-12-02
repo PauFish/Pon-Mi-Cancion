@@ -18,14 +18,7 @@ class PartyController extends Controller
 
     public function index(){
         $parties = collect(data_get(app()->make(Party::class)->list(),'data'));
-        
         return view('home', compact('parties'));
-        //guardamos todos los datos de los usuarios en la variable $users
-        //$parties = Party::all();
-
-        //return view('home',compact('parties'));
-
-        //return response()->json([ 'data'=> $this->partyService->index()]);
     }
 
     public function show($id){
@@ -41,45 +34,29 @@ class PartyController extends Controller
     public function store(Request $request)
     {
         $data= new Party();
-
         $data->name = $request->get('name');
         $data->photo = $request->get('photo');
-
         $data->save();
-
         echo '<script>alert("Fiesta creada"), window.location.href ="/djHome" </script>';
-        //return redirect('/home');
     }
 
-    public function destroy($id) {
-       /* $this->partyService->delete($id);
-        return 'Party eliminada con exito';*/
+    public function destroy($id)
+     {
         $data = Party::find($id);
         $data->delete();
         echo '<script>alert("Fiesta eliminada"), window.location.href ="/djHome" </script>';
-        //return redirect('/home');
-         
     }
 
     public function edit($id) {
         $party = Party::find($id);
         return view('parties.edit')->with('party',$party);
     }
-    public function update(Request $request, $id){
-       /* $data = $request->validated();
-        $name = ['name'];
-        $photo = ['photo'];
-        $this->partyService->update($id, [$name, $photo]);
-        return "Party actualizada con exito";*/
-
+    public function update(Request $request, $id)
+    {
         $data = Party::find($id);
-
         $data->name = $request->get('name');
         $data->photo = $request->get('photo');
-
         $data->save();
-        
         echo '<script>alert("Fiesta modificada"), window.location.href ="/djHome" </script>';
-        
     }
 }  
