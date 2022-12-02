@@ -116,147 +116,149 @@
             </div>
         </nav>
     </div>
-            <div class="container" style="margin-top:20px">
-            <div class="row ">
-                <div class="col-md-15">
-                    <div class="card">
-                        <div class="card-header text-danger">Hola ADMIN
+    <div class="container" style="margin-top:20px">
+        <div class="row ">
+            <div class="col-md-15">
+                <div class="card">
+                    <div class="card-header text-danger">Hola ADMIN
+                    </div>
+                    <div class="card-body">
+                        @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
                         </div>
-                        <div class="card-body">
-                            @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                            @endif
-                            <div class="card-header text-danger">
-                                <p>Administrador de Fiestas</p>
-                            </div>
-                            <div class="parties_container">
-                                <br>
-                                <div class="card">
-                                    <div class="card-body ">
-                                        <!-- Create -->
-                                        <a href="{{ url('/parties/create') }}" class="btn  btn-success" style="margin:10px" title="Añadir fiesta">Añadir Fiestas</a>
+                        @endif
+                        <div class="card-header text-danger">
+                            <p>Administrador de Fiestas</p>
+                        </div>
+                        <div class="parties_container">
+                            <br>
+                            <div class="card">
+                                <div class="card-body ">
+                                    <!-- Create -->
+                                    <a href="{{ url('/parties/create') }}" class="btn  btn-success" style="margin:10px" title="Añadir fiesta">Añadir Fiestas</a>
 
-                                        @php
-                                        $parties=\App\Models\Party::all();
-                                        @endphp
+                                    @php
+                                    $parties=\App\Models\Party::all();
+                                    @endphp
 
-                                        <table id="parties_Table" class="table table-striped" style="color: #FF6700">
+                                    <table id="parties_Table" class="table table-striped" style="color: #FF6700">
 
-                                            <thead>
-                                                <tr>
-                                                    <th>ID</th>
-                                                    <th>Fiesta</th>
-                                                    <th>Cartel</th>
-                                                    <th>Editar</th>
-                                                    <th>Eliminar</th>
-                                                </tr>
-                                            </thead>
-                                            <!--le pasamos la variable en la que se almaceno todas las parties en PartyController
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Fiesta</th>
+                                                <th>Cartel</th>
+                                                <th>Editar</th>
+                                                <th>Eliminar</th>
+                                            </tr>
+                                        </thead>
+                                        <!--le pasamos la variable en la que se almaceno todas las parties en PartyController
                                         y cada vez que entre lo almacena en $party -->
-                                            <tbody>
-                                                @foreach($parties as $party)
-                                                <tr>
-                                                    <td>{{$party->id}}</td>
-                                                    <td>{{$party->name}}</td>
-                                                    <td>{{$party->photo}}</td>
-                                                    <!-- editar fiestas-->
-                                                    <td><a href="/parties/{{$party->id}}/edit" class="btn btn-info">Editar Fiesta</a></td>
-                                                    <!-- eliminar fiestas-->
-                                                    <td>
-                                                        <form action="{{route('parties.destroy',$party->id)}}" method='POST'>
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button class="btn btn-danger" type="submit">Eliminar Fiesta</button>
-                                                        </form>
-                                                    </td>
-                                                </tr>
-                                                @endforeach
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                        <tbody>
+                                            @foreach($parties as $party)
+                                            <tr>
+                                                <td>{{$party->id}}</td>
+                                                <td>{{$party->name}}</td>
+                                                <!--<td><img src="{{ asset('/images/{$party->photo}') }}" alt="Party photo" style="width:30px"></td>-->
+                                                <td><img src="\images\dj.jpeg" style="width:80px"></td>
+
+                                                <!-- editar fiestas-->
+                                                <td><a href="/parties/{{$party->id}}/edit" class="btn btn-info">Editar Fiesta</a></td>
+                                                <!-- eliminar fiestas-->
+                                                <td>
+                                                    <form action="{{route('parties.destroy',$party->id)}}" method='POST'>
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button class="btn btn-danger" type="submit">Eliminar Fiesta</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
 
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-md-15">
-                            <div class="card">
-                                <div class="card-header text-danger">
-                                    <p>Administrador de Canciones</p>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-15">
+                        <div class="card">
+                            <div class="card-header text-danger">
+                                <p>Administrador de Canciones</p>
+                            </div>
+                            <div class="card-body">
+                                @if (session('status'))
+                                <div class="alert alert-success" role="alert">
+                                    {{ session('status') }}
                                 </div>
-                                <div class="card-body">
-                                    @if (session('status'))
-                                    <div class="alert alert-success" role="alert">
-                                        {{ session('status') }}
-                                    </div>
-                                    @endif
+                                @endif
 
-                                    <div class="songs_container">
-                                        <br>
-                                        <div class="card">
+                                <div class="songs_container">
+                                    <br>
+                                    <div class="card">
 
-                                            <div class="card-body">
+                                        <div class="card-body">
 
-                                                @php
-                                                $songs=\App\Models\Song::all();
-                                                @endphp
-                                                <!-- Create -->
-                                                <div>
-                                                    <a href="{{ url('/songs/create') }}" class="btn btn-success" style="margin:10px" title="Añadir Cancion">Añadir Canción</a>
-                                                </div>
-                                                <div class="songs_container">
-                                                    <br>
-                                                    <table id="songs_Table" class="table table-striped" style="color: #FF6700">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>ID</th>
-                                                                <th>Cancion</th>
-                                                                <th>Artista</th>
-                                                                <th>Votos</th>
-                                                                <th>Votar</th>
-                                                                <th>Editar</th>
-                                                                <th>Eliminar</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <!--le pasamos la variable en la que se almaceno todas las Songs en SongController
- y cada vez que entre lo almacena en $song -->
-                                                        @foreach($songs as $song)
+                                            @php
+                                            $songs=\App\Models\Song::all();
+                                            @endphp
+                                            <!-- Create -->
+                                            <div>
+                                                <a href="{{ url('/songs/create') }}" class="btn btn-success" style="margin:10px" title="Añadir Cancion">Añadir Canción</a>
+                                            </div>
+                                            <div class="songs_container">
+                                                <br>
+                                                <table id="songs_Table" class="table table-striped" style="color: #FF6700">
+                                                    <thead>
                                                         <tr>
-                                                            <td>{{$song->id}}</td>
-                                                            <td>{{$song->title}}</td>
-                                                            <td>{{$song->artist}}</td>
-                                                            <td>{{$song->vote}}</td>
-                                                            <!-- Vota Canciones-->
-                                                            <td><a href="{{route('songs.show',$song->id)}}" type="button" class="btn btn-primary">VOTAR</a></td>
-                                                            <!-- editar Canciones-->
-                                                            <td><a href="/songs/{{$song->id}}/edit" class="btn btn-info">Editar Canción</a></td>
-                                                            <!-- eliminar Canciones-->
-                                                            <td>
-                                                                <form action="{{route('songs.destroy',$song->id)}}" method='POST'>
-                                                                    @csrf
-                                                                    @method('DELETE')
-                                                                    <button class="btn btn-danger" type="submit">Eliminar Canción</button>
-                                                                </form>
-                                                            </td>
+                                                            <th>ID</th>
+                                                            <th>Cancion</th>
+                                                            <th>Artista</th>
+                                                            <th>Votos</th>
+                                                            <th>Votar</th>
+                                                            <th>Editar</th>
+                                                            <th>Eliminar</th>
                                                         </tr>
-                                                        @endforeach
-                                                        <tbody>
-                                                    </table>
-                                                </div>
+                                                    </thead>
+                                                    <!--le pasamos la variable en la que se almaceno todas las Songs en SongController
+ y cada vez que entre lo almacena en $song -->
+                                                    @foreach($songs as $song)
+                                                    <tr>
+                                                        <td>{{$song->id}}</td>
+                                                        <td>{{$song->title}}</td>
+                                                        <td>{{$song->artist}}</td>
+                                                        <td>{{$song->vote}}</td>
+                                                        <!-- Vota Canciones-->
+                                                        <td><a href="{{route('songs.show',$song->id)}}" type="button" class="btn btn-primary">VOTAR</a></td>
+                                                        <!-- editar Canciones-->
+                                                        <td><a href="/songs/{{$song->id}}/edit" class="btn btn-info">Editar Canción</a></td>
+                                                        <!-- eliminar Canciones-->
+                                                        <td>
+                                                            <form action="{{route('songs.destroy',$song->id)}}" method='POST'>
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button class="btn btn-danger" type="submit">Eliminar Canción</button>
+                                                            </form>
+                                                        </td>
+                                                    </tr>
+                                                    @endforeach
+                                                    <tbody>
+                                                </table>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="container">
-            <div class=" row justify-content-center">
+                    </div>
+                    <div class="container">
+                        <div class=" row justify-content-center">
                             <div class="col-md-15">
                                 <div class="card">
                                     <div class="card-header text-danger">Administrador Usuarios
@@ -287,6 +289,7 @@
                                                                 <th>Nombre</th>
                                                                 <th>Email</th>
                                                                 <th>Teléfono</th>
+                                                                <th>Tipo</th>
                                                                 <th>Role</th>
                                                                 <th>Editar</th>
 
@@ -300,6 +303,7 @@
                                                             <td>{{$user->email}}</td>
                                                             <td>{{$user->phone}}</td>
                                                             <td>{{$user->type}}</td>
+                                                            <td>{{$user->role_id}}</td>
                                                             <!-- editar Usuario-->
                                                             <td><a href="/users/{{$user->id}}/edit" class="btn btn-info">Editar Role</a></td>
                                                             <!-- eliminar Usuario-->
@@ -311,64 +315,64 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    <div class="card" style="margin-top:20px">
-                                        <div class="card-header text-danger">
-                                            <p>Administrador de Roles</p>
-                                        </div>
-                                        <div class="card-body">
-                                            @php
-                                            $roles=\App\Models\Role::all();
-                                            @endphp
+                                        <div class="card" style="margin-top:20px">
+                                            <div class="card-header text-danger">
+                                                <p>Administrador de Roles</p>
+                                            </div>
+                                            <div class="card-body">
+                                                @php
+                                                $roles=\App\Models\Role::all();
+                                                @endphp
 
-                                            <div class="roles_container">
-                                                <!-- Create -->
-                                                <a href="{{ url('/roles/create') }}" class="btn btn-success" title="Añadir Role">Añadir Role</a>
-                                                <div class="card-body">
-                                                </div>
-                                                <table id="roles_Table" class="table table-striped" style="color: #FF6700">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>id</th>
-                                                            <th>Nombre</th>
-                                                            <th>Numero de Role</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <!--le pasamos la variable en la que se almaceno todas las Role en RoleController
+                                                <div class="roles_container">
+                                                    <!-- Create -->
+                                                    <a href="{{ url('/roles/create') }}" class="btn btn-success" title="Añadir Role">Añadir Role</a>
+                                                    <div class="card-body">
+                                                    </div>
+                                                    <table id="roles_Table" class="table table-striped" style="color: #FF6700">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>id</th>
+                                                                <th>Nombre</th>
+                                                                <th>Role</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <!--le pasamos la variable en la que se almaceno todas las Role en RoleController
                                                                  y cada vez que entre lo almacena en $song -->
-                                                    @foreach($roles as $role)
-                                                    <tr>
-                                                        <td>{{$role->id}}</td>
-                                                        <td>{{$role->name}}</td>
-                                                        <td>{{$role->fk_type}}</td>
-                                                    </tr>
-                                                    @endforeach
-                                                    <tbody>
-                                                </table>
+                                                        @foreach($roles as $role)
+                                                        <tr>
+                                                            <td>{{$role->id}}</td>
+                                                            <td>{{$role->name}}</td>
+                                                            <td>{{$role->role}}</td>
+                                                        </tr>
+                                                        @endforeach
+                                                        <tbody>
+                                                    </table>
 
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-                            <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-                            <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
-                            <script src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
-                            <script src="https://cdn.datatables.net/responsive/2.4.0/js/responsive.bootstrap5.min.js"></script>
+                                <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+                                <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+                                <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+                                <script src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
+                                <script src="https://cdn.datatables.net/responsive/2.4.0/js/responsive.bootstrap5.min.js"></script>
 
-                            <!--Links de las tablas para que funcionen en datatable-->
-                            <script>
-                                $('#parties_Table').DataTable();
-                            </script>
-                            <script>
-                                $('#songs_Table').DataTable();
-                            </script>
-                            <script>
-                                $('#users_Table').DataTable();
-                            </script>
-                            <script>
-                                $('#roles_Table').DataTable();
-                            </script>
-    </body>
+                                <!--Links de las tablas para que funcionen en datatable-->
+                                <script>
+                                    $('#parties_Table').DataTable();
+                                </script>
+                                <script>
+                                    $('#songs_Table').DataTable();
+                                </script>
+                                <script>
+                                    $('#users_Table').DataTable();
+                                </script>
+                                <script>
+                                    $('#roles_Table').DataTable();
+                                </script>
+</body>
 
 </html>

@@ -59,7 +59,12 @@ body {
                                         <tr>
                                             <td>{{$party->id}}</td>
                                             <td>{{$party->name}}</td>
-                                            <td>{{$party->photo}}</td>
+                                            
+
+                                            <!--<td><img src="{{ asset('/images/{$party->photo}') }}" alt="Party photo" style="width:30px"></td>-->
+                                            <td><img src="\images\dj.jpeg" style="width:80px"></td>
+                                            <!-- Para moverse a canciones-->
+
                                             <!-- editar fiestas-->
                                             <td><a href="/parties/{{$party->id}}/edit" class="btn btn-info">Editar Fiesta</a></td>
                                             <!-- eliminar fiestas-->

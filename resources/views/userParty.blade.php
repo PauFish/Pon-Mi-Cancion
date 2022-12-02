@@ -35,7 +35,9 @@
                                         <tr>
                                             <th>Fiesta</th>
                                             <th>Cartel</th>
-                                            <th>Ver</th>
+                                            
+                                            <th>Ver Canciones</th>
+                                        
                                         </tr>
                                     </thead>
                                     <!--le pasamos la variable en la que se almaceno todas las parties en PartyController
@@ -44,14 +46,18 @@
                                         @foreach($parties as $party)
                                         <tr>
                                             <td>{{$party->name}}</td>
-                                            <td>{{$party->photo}}</td>
+                                          
+                                            
+                                            <!--<td><img src="{{ asset('/images/{$party->photo}') }}" alt="Party photo" style="width:30px"></td>-->
+                                            <td><img src="\images\dj.jpeg" style="width:80px"></td>
                                             <!-- Para moverse a canciones-->
-                                            <td><a href="/userSong" class="btn text-light btn-warning bg-dark" style="" type="button">Ver</a></td>
+                                            <td><a href="/userSong" class="btn text-light btn-warning bg-dark"  type="button">Ver</a></td>
                                         </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
                             </div>
+                           
                         </div>
                     </div>
                 </div>
@@ -95,4 +101,6 @@
 
                     </form>
                 </div>
+                
                 @endsection
+                
