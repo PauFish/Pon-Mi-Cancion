@@ -16,13 +16,13 @@ class SongController extends Controller
     {
         $this->songService = $songService;
     }
-/*Enseña las canciones en nuestro caso nos sirve para ser mostradas en una tabla */
+//enseñar el listado de canciones
     public function index()
     {
         $songs = Song::all();
         return view('song', compact('songs'));
     }
-/*Crea canciones */
+//Crea canción
     public function create()
     {
         return view('songs.create');
@@ -36,14 +36,14 @@ class SongController extends Controller
         $data->save();
         echo '<script>alert("Canción creada"), window.location.href ="/djSong" </script>';
     }
-/*Elimina caciones*/
+//Elimina canción
     public function destroy($id)
     {
         $data = Song::find($id);
         $data->delete();
         echo '<script>alert("Canción eliminada"), window.location.href ="/djSong" </script>';
     }
-/*Modifica canciones*/
+//Modifica canción
     public function edit($id)
     {
         $song = Song::find($id);
@@ -58,7 +58,8 @@ class SongController extends Controller
         $data->save();
         echo '<script>alert("Canción modificada"), window.location.href ="/djSong" </script>';
     }
-/* Aqui esta el "truco" para votar las canciones gracias a increment*/
+
+    // Aqui esta el "truco" para votar las canciones gracias a increment
     public function show($id)
     { {
             //incrementa en 1 al votar

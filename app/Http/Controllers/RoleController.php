@@ -15,17 +15,17 @@ class RoleController extends Controller
     public function __construct(RoleServiceProvider $roleService){
         $this->roleService = $roleService;
     }
-  /*Enseña los roles en nuestro caso nos sirve para ser mostrados en una tabla */
+  //Enseñar el listado de Rol
     public function index()
     {
         $roles = Role::all();
         return view('role', compact('roles'));
     }
- /*Seleccionar un role en concreto*/
+ //Seleccionar un rol
     public function show($id){
         return response()->json(['data'=> $this->roleService->show($id)]);
     }
-      /*Crea un nuevo role */
+      //Crea un nuevo rol
     public function create()
     {
         return view('roles.create');
@@ -37,12 +37,12 @@ class RoleController extends Controller
         echo '<script>alert("Role Creado con Éxito"), window.location.href ="/homeAdmin" </script>';
     }
 
-  /* Elimina un usuario */
+  //Elimina un rol
     public function destroy($id) {
         $this->roleService->delete($id);
         return 'Role eliminado con exito';
     }
- /*Modifica un usuario */
+ //Modifica un rol
     public function update(RoleRequest $request, $id){
         $data = $request->validated();
         $name = ['name'];

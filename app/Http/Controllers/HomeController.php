@@ -6,9 +6,7 @@ use Illuminate\Http\Request;
   
 class HomeController extends Controller
 {
-    /**
-     * Crea una nueva instancia del controlador
-     *
+    /*
      * @return void
      */
     public function __construct()
@@ -16,9 +14,7 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
   
-    /**
-     * Enseña userparty
-     *
+    /*
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
@@ -26,9 +22,7 @@ class HomeController extends Controller
         return view('userParty');
     } 
   
-    /**
-     * Enseña homeadmin
-     *
+    /*
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function adminHome()
@@ -36,9 +30,7 @@ class HomeController extends Controller
         return view('homeAdmin');
     }
   
-    /**
-     * Enseña djhome
-     *
+    /*
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function managerHome()

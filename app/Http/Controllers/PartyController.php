@@ -16,20 +16,20 @@ class PartyController extends Controller
     {
         $this->partyService = $partyService;
     }
-    /*Enseña fiestas en nuestro caso nos sirve para ser mostradas en una tabla */
+    //Enseñar un listado de fiestas
     public function index()
     {
         $parties = collect(data_get(app()->make(Party::class)->list(), 'data'));
         return view('home', compact('parties'));
     }
 
-    /*Seleccionar una fiesta en concreto*/
+    //Seleccionar una fiesta
     public function show($id)
     {
         return response()->json(['data' => $this->partyService->show($id)]);
     }
     
-    /*Crea un una nueva fiesta */
+    //Crea un una nueva fiesta
     public function create()
     {
         return view('parties.create');
@@ -42,14 +42,14 @@ class PartyController extends Controller
         $data->save();
         echo '<script>alert("Fiesta creada"), window.location.href ="/djHome" </script>';
     }
-    /*elimina la fiesta con el id seleccionado */
+    //Elimina la fiesta con el id seleccionado
     public function destroy($id)
     {
         $data = Party::find($id);
         $data->delete();
         echo '<script>alert("Fiesta eliminada"), window.location.href ="/djHome" </script>';
     }
-    /*Actualizamos la fiesta */
+    //Actualizamos una fiesta con el id seleccionado
     public function edit($id)
     {
         $party = Party::find($id);

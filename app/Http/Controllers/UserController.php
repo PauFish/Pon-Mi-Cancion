@@ -15,19 +15,19 @@ class UserController extends Controller
         $this->userService = $userService;
     }
     
-    /*Enseña usuarios en nuestro caso nos sirve para ser mostrados en una tabla */
+    //Enseñar el listado de usuarios
     public function index()
     {
     $songs = User::all();
     return view('user', compact('users'));
     }
 
-    /*Seleccionar un usuario en concreto*/
+    //Seleccionar un solo usuario
     public function show($id){
         return response()->json(['data'=> $this->userService->show($id)]);
     }
 
-    /*Crea un nuevo usuario */
+    //Crea un nuevo usuario
     public function store(UserRequest $request){
         $data = $request->validated();
         
@@ -40,17 +40,17 @@ class UserController extends Controller
         return 'Usuario creado con exito';
        
     }
-    /* Elimina un usuario */
+    // Elimina un usuario
     public function destroy($id) {
         $this->userService->delete($id);
         return 'Usuario eliminado con exito';
     }
-    /*Necesario para modificar un usuario */
+    //Necesario para modificar un usuario
     public function edit($id) {
         $user = User::find($id);
         return view('users.edit')->with('user',$user);
     }
-    /*Modifica un usuario */
+    //Modifica un usuario
     public function update(Request $request, $id)
     {
         $data = User::find($id);
