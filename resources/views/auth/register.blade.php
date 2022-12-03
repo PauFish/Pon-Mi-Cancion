@@ -1,4 +1,5 @@
-@extends('layouts.app')
+ <!-- Importamos los layauts y el content -->
+ @extends('layouts.app')
 
 @section('content')
 
@@ -10,9 +11,12 @@
                     <h3>Registrarse</h3>
                 </div>
                 <div class="card-body">
+                      <!-- formulario de registro -->
                     <form method="POST" action="{{ route('register') }}" id="registerUser">
+                          <!-- seguridad -->
                         @csrf
                         <div class="row mb-3">
+                              <!--  {{ __('Nombre') }} nos dejara cambiar el idioma en un futuro segun la peticion del usuario-->
                             <label for="name" style="color: #FF6700;" class="col-md-4 col-form-label text-md-end">{{ __('Nombre') }}</label>
 
                             <div class="col-md-6">
@@ -84,4 +88,5 @@
         </div>
     </div>
 </div>
+  <!-- Termina todas las secciones inicializadas al principio -->
 @endsection

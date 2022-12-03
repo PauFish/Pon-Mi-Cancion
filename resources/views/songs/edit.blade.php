@@ -1,3 +1,4 @@
+ <!-- Importamos los layauts y el content -->
 @extends('layouts.app')
 @section('content')
 <div class="container">
@@ -7,7 +8,9 @@
         <div class="card-header">Editar Fiesta</div>
         <div class="card-body">
           <form action="/songs/{{$song->id}}" method="POST">
+             <!-- ciberseguridad -->
             @csrf
+             <!-- Para que le llegue un put utilizando un form con post -->
             @method('PUT')
             <input type="hidden" name="id" id="id" value="{{$song->id}}" />
             <label>Cancion</label></br>
@@ -23,4 +26,5 @@
     </div>
   </div>
 </div>
+  <!-- Termina todas las secciones inicializadas al principio -->
 @stop

@@ -1,3 +1,4 @@
+ <!-- Importamos los layauts y el content -->
 @extends('layouts.app')
 @section('content')
 <div class="container">
@@ -7,7 +8,9 @@
         <div class="card-header">Editar Usuario</div>
         <div class="card-body">
           <form action="/users/{{$user->id}}" method="POST">
+             <!-- seguridad y muestra el estado de la sesion -->
             @csrf
+             <!-- Para que le llegue un put utilizando un form con post -->
             @method('PUT')
             <label>id</label>
             <input type="hidden" name="id" id="id" value="{{$user->id}}" />
@@ -35,4 +38,5 @@
     </div>
   </div>
 </div>
+  <!-- Termina todas las secciones inicializadas al principio -->
 @stop

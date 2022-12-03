@@ -1,10 +1,11 @@
+ <!-- Nuestra Landing page -->
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Styles -->
+    <!-- estilospara solo la landing -->
     <style>
         #welcome h1 {
             font-size: 19vw;
@@ -17,6 +18,7 @@
 </head>
 
 <body>
+     <!-- Importamos los layauts y el content -->
     @extends('layouts.app')
 
     @section('content')
@@ -36,7 +38,7 @@
             </div>
         </div>
     </div>
-
+  <!-- Termina todas las secciones inicializadas al principio -->
     @endsection
 
 </body>

@@ -1,4 +1,5 @@
-@extends('layouts.app')
+ <!-- Importamos los layauts y el content -->
+ @extends('layouts.app')
 
 @section('content')
 

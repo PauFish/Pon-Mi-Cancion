@@ -1,3 +1,4 @@
+ <!-- Por motivos de ciberseguridad el admin no importara los Layauts ni el content -->
 <!doctype html>
 <html>
 
@@ -68,12 +69,10 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                     </ul>
-                    <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto ">
-                        <!-- Authentication Links -->
+                         <!-- seguridad y muestra el estado de la sesion -->
                         @guest
                         @if (Route::has('login'))
                         <li class="nav-item">
@@ -265,6 +264,7 @@
                                                                 <th>Editar</th>
                                                             </tr>
                                                         </thead>
+                                                         <!-- necesario para el foreach -->
                                                         @php
                                                         $users=\App\Models\User::all();
                                                         @endphp
@@ -276,9 +276,8 @@
                                                             <td>{{$user->phone}}</td>
                                                             <td>{{$user->type}}</td>
                                                             <td>{{$user->role_id}}</td>
-                                                            <!-- editar Usuario-->
+                                                            <!-- editar Role-->
                                                             <td><a href="/users/{{$user->id}}/edit" class="btn btn-info">Editar Role</a></td>
-                                                            <!-- eliminar Usuario-->
                                                         </tr>
                                                         @endforeach
                                                         <tbody>

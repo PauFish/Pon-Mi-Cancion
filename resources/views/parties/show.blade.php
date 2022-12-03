@@ -1,3 +1,4 @@
+ <!-- Importamos los layauts y el content -->
 @extends('layouts.app')
 @section('content')
 <div class="container">
@@ -22,3 +23,5 @@
     </div>
   </div>
 </div>
+  <!-- Termina todas las secciones inicializadas al principio -->
+@stop

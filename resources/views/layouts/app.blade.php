@@ -1,3 +1,4 @@
+  <!-- Nuestra plantilla base que sera importada por el resto de blades que asi lo requieran -->
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -5,17 +6,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
+    <!-- CSRF seguridad -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- Fonts -->
+    <!-- Fuentes -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
-    <!--Data table-->
+    <!--Estilos de Data table-->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
@@ -64,7 +65,7 @@
 	-webkit-animation: ani-font 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 	        animation: ani-font 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
-
+/*animacionnes*/
 @-webkit-keyframes ani-font {
   0% {
     letter-spacing: -3em;
@@ -103,14 +104,10 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
                     </ul>
-
-                    <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto ">
-                        <!-- Authentication Links -->
+                        <!-- Autentificación -->
                         @guest
                         @if (Route::has('login'))
                         <li class="nav-item">
@@ -157,7 +154,7 @@
     <script src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.4.0/js/responsive.bootstrap5.min.js"></script>
 
-    <!--Links de las tablas para que funcionen en datatable-->
+    <!--scripts de las tablas con el id de la tabla para que funcionen en datatable-->
     <script>
         $('#parties_Table').DataTable();
     </script>

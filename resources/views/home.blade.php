@@ -1,3 +1,4 @@
+ <!-- Importamos los layauts y el content -->
 @extends('layouts.app')
 
 @section('content')
@@ -28,7 +29,7 @@
                         {{ session('status') }}
                     </div>
                     @endif
-                    <!-- Create -->
+                    <!-- Create Fiestas-->
                     <a href="{{ url('/parties/create') }}" class="btn  btn-success" title="Añadir fiesta">Añadir Fiestas</a>
                     <!-- Para moverse a canciones-->
                     <td><a href="/song" class="btn text-light btn-warning bg-dark" type="button">Ver Canciones</a></td>
@@ -79,4 +80,5 @@
             </div>
         </div>
     </div>
+      <!-- Termina todas las secciones inicializadas al principio -->
     @endsection

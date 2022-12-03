@@ -1,3 +1,4 @@
+ <!-- Importamos los layauts y el content -->
 @extends('layouts.app')
 @section('content')
 
@@ -9,8 +10,8 @@
           <h2>Crear Nueva Fiesta</h2>
         </div>
         <div class="card-body">
-          <!-- Home es nuestra parties -->
           <form action="/parties" method="POST">
+              <!-- seguridad -->
             @csrf
             <label class="form-label">Nombre</label></br>
             <input type="text" name="name" id="name" class="form-control"></br>
@@ -24,5 +25,5 @@
     </div>
   </div>
 </div>
-
+  <!-- Termina todas las secciones inicializadas al principio -->
 @endsection

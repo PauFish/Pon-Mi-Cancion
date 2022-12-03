@@ -1,4 +1,4 @@
-<!-- importamos las plantillas -->
+ <!-- Importamos los layauts y el content -->
 @extends('layouts.app')
 
 @section('content')
@@ -10,6 +10,7 @@
                 <div class="card-header d-flex  align-items-center">
                 </div>
                 <div class="card-body">
+                     <!-- seguridad y muestra el estado de la sesion -->
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">
                         {{ session('status') }}

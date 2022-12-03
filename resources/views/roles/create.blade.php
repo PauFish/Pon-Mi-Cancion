@@ -1,3 +1,4 @@
+ <!-- Importamos los layauts y el content -->
 @extends('layouts.app')
 @section('content')
 <div class="container">
@@ -9,6 +10,7 @@
         </div>
         <div class="card-body">
           <form action="/roles" method="POST">
+             <!-- seguridad -->
             @csrf
             <label class="form-label">Nombre</label></br>
             <input type="text" name="name" id="name" class="form-control"></br>
@@ -20,5 +22,5 @@
     </div>
   </div>
 </div>
-
+  <!-- Termina todas las secciones inicializadas al principio -->
 @endsection

@@ -1,3 +1,4 @@
+ <!-- Importamos los layauts y el content -->
 @extends('layouts.app')
 
 @section('content')
@@ -16,12 +17,13 @@
                     <h1>Hola DJ</h1>
                 </div>
                 <div class="card-body">
+                     <!-- seguridad y muestra el estado de la sesion -->
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">
                         {{ session('status') }}
                     </div>
                     @endif
-                    <!-- Create -->
+                    <!-- Enlazamos con el blade de create party -->
                     <a href="{{ url('/parties/create') }}" class="btn  btn-success" title="Añadir fiesta">Añadir Fiestas</a>
                     <!-- Para moverse a canciones-->
                     <td><a href="/djSong" class="btn text-light btn-warning bg-dark" type="button">Ver Canciones</a></td>
@@ -73,4 +75,5 @@
             </div>
         </div>
     </div>
+      <!-- Termina todas las secciones inicializadas al principio -->
 @endsection
