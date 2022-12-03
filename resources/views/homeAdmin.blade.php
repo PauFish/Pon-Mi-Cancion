@@ -147,8 +147,7 @@
                                             <tr>
                                                 <td>{{$party->id}}</td>
                                                 <td>{{$party->name}}</td>
-                                                <!--<td><img src="{{ asset('/images/{$party->photo}') }}" alt="Party photo" style="width:30px"></td>-->
-                                                <td><img src="\images\dj.jpeg" style="width:80px"></td>
+                                                <td><img  src="{{asset($party->photo)}}" style="width:15vw" alt="foto de la fiesta" ></td>
                                                 <!-- editar fiestas-->
                                                 <td><a href="/parties/{{$party->id}}/edit" class="btn btn-info">Editar Fiesta</a></td>
                                                 <!-- eliminar fiestas-->

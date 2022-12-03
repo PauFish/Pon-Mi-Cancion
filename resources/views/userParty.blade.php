@@ -40,8 +40,7 @@
                     <!-- Recorremos todos los datos que alverga la tabla parties en nuesta base de datos y fuardamos cada fila en $parties -->
                     @foreach($parties as $party)
                     <div class="d-flex  justify-content-center align-items-center ">
-                        <!-- <td><img src="{{ asset('/images/{$party->photo}') }}" alt="Party photo" style="width:30px"></td> -->
-                        <img src="\images\rave.jpeg" style="width:50vw; margin:30px; "></td>
+                        <img  src="{{asset($party->photo)}}" alt="foto de la fiesta" style="margin:50px" height="400vw" width="700vw" >
                         <p style="margin:30px; font-weight:bold; color: #FF6700;">{{$party->name}}</p>
                         <!-- Para moverse a canciones-->
                         <a href="/userSong" class="btn text-light btn-warning bg-dark " style="margin:30px" type="button">Ver</a></td>

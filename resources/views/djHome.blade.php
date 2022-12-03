@@ -50,8 +50,7 @@
                                         <tr>
                                             <td>{{$party->id}}</td>
                                             <td>{{$party->name}}</td>
-                                            <!--<td><img src="{{ asset('/images/{$party->photo}') }}" alt="Party photo" style="width:30px"></td>-->
-                                            <td><img src="\images\rave.jpeg" style="width:80px"></td>
+                                            <td><img  src="{{asset($party->photo)}}" style="width:25vw" alt="foto de la fiesta" ></td>
                                             <!-- Para moverse a canciones-->
                                             <!-- editar fiestas-->
                                             <td><a href="/parties/{{$party->id}}/edit" class="btn btn-info">Editar Fiesta</a></td>
